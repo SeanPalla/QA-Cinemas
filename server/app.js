@@ -9,7 +9,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const routes = require('./routes/movieRoutes');
-app.use('/', routes);
+const movieRoutes = require('./routes/movieRoutes');
+const commentRoutes = require('./routes/commentRoutes');
+app.use('/', movieRoutes);
+app.use('/', commentRoutes);
 
 app.listen(port, () => console.log("Working"));
