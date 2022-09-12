@@ -1,2 +1,2 @@
 # QA-Cinemas
-Team Foxtrots QA-Cinema project
+Team Foxtrors QA-Cinema project
