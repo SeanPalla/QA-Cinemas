@@ -13,7 +13,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(expressSession({
-    secret: "joiahjiufuioahefua", //placeholder secret while working on sessions/permissionss
+    secret: process.env.SECRET , 
     resave: false,
     saveUninitialized: false, // only want sessions upon logging in
     cookie: {
@@ -28,9 +28,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-const movieRoutes = require('./routes/movieRoutes');
-const commentRoutes = require('./routes/commentRoutes');
-const authRouter = require('./routes/authRouter');
+const movieRoute = require('./routes/movieRoutes');
+const commentRoute = require('./routes/commentRoutes');
+const authRoute = require('./routes/authRouter');
 const userRoute = require('./routes/userRouter');
 const bookingRoute = require('./routes/bookingRoutes');
 
