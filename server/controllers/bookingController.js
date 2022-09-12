@@ -53,10 +53,9 @@ exports.insertBookingIntoUser = async(req, res) => {
     let paramID = req.params.id;
     let { bookings } = req.body;
     
-    //        let pushBooking = { bookings }.push(addBooking);
-
     try {
-        const addBooking = await User.findOneAndUpdate({_id:paramID}, { bookings });
+        const addBooking = await User.findOneAndUpdate({_id:paramID},{ $push : { bookings }},
+            {safe: true, upsert: true});
         res.json(addBooking);
     } catch (err) {
         res.status(400).json( { message: err })
