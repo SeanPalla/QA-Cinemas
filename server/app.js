@@ -13,7 +13,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(expressSession({
-    secret: "joiahjiufuioahefua", 
+    secret: "joiahjiufuioahefua", //placeholder secret while working on sessions/permissionss
     resave: false,
     saveUninitialized: false, // only want sessions upon logging in
     cookie: {
