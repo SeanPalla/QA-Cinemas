@@ -17,10 +17,6 @@ const UserSchema = new mongoose.Schema({
         required:true,
         unique:true,
         match: /.+\@.+\..+/,
-      //   validate:{validator: function(v){ 
-      //    return /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$/.test(v)},
-      //    message: props => `${props.value} is not a valid Email!`
-      // },
         trim:true
      },
      username:{
@@ -78,32 +74,7 @@ const UserSchema = new mongoose.Schema({
            trim:true
         }
      },
-     bookings:{
-        movieTitle:{
-           type:String,
-           trim:true
-        },
-        showingTime:{
-           type:String,
-           trim:true
-        },
-        numberOfSeats:{
-           type:Number,
-           trim:true
-        },
-        adult:{
-           type:Number,
-           trim:true
-        },
-        child:{
-           type:Number,
-           trim:true
-        },
-        concession:{
-           type:Number,
-           trim:true
-        }
-     }
+     bookings: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Booking' }] 
  });
  
  UserSchema.plugin(passportLocalMongoose);
