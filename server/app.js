@@ -10,11 +10,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const movieRoute = require('./routes/movieRoutes');
+const commentRoute = require('./routes/commentRoutes');
 const userRoute = require('./routes/userRouter');
 const bookingRoute = require('./routes/bookingRoutes');
 
 app.use('/', movieRoute);
 app.use('/', userRoute);
 app.use('/', bookingRoute);
+app.use('/', commentRoute);
 
 app.listen(port, () => console.log("Working"));
