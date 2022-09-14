@@ -1,0 +1,225 @@
+------------------------------------------------ Comments ------------------------------------------------
+
+{
+   "comment":{
+      "type":"string",
+      "Required":true,
+      "maxLength":300,
+      "trim":true
+   },
+   "username":{
+      "type":"string",
+      "required":true,
+      "trim":true
+   },
+   "date created":{
+      "type":"Date.now()",
+      "trim":true
+   },
+   "rating":{
+      "type":"Number",
+      "required":false,
+      "trim":true
+   }
+}
+
+
+------------------------------------------------ USERS ------------------------------------------------
+
+{
+   "Full name":{
+      "type":"string",
+      "required":true,
+      "trim":true
+   },
+   "D.O.B":{
+      "type":"Date",
+      "required":true,
+      "trim":true
+   },
+   "email":{
+      "type":"string",
+      "required":true,
+      "unique":true,
+      "regex":/.+\@.+\..+/,
+      "trim":true
+   },
+   "username":{
+      "type":"string",
+      "required":true,
+      "unique":true,
+      "trim":true
+   },
+   "password":{
+      "type":"string",
+      "required":true,
+      "minLength":7,
+      "regex":/(?=^.{6,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*/,
+      "trim":true
+   },
+   "Phone number":{
+      "type":"Number",
+      "min":11,
+      "max":11,
+      "required":false,
+      "trim":true
+   },
+   "Role":{
+      "type":"string",
+      "default":"MEMBER",
+      "enum":[
+         "MEMBER",
+         "ADMIN"
+      ],
+      "required":true,
+      "trim":true
+   },
+   "Address":{
+      "Building name/number":{
+         "type":"string",
+         "required":true,
+         "trim":true
+      },
+      "Street name":{
+         "type":"string",
+         "required":true,
+         "trim":true
+      },
+      "Address line 2":{
+         "type":"string",
+         "required":true,
+         "trim":true
+      },
+      "Postcode":{
+         "type":"string",
+         "required":true,
+         "trim":true,
+         "regex":/^(([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))\s?[0-9][A-Za-z]{2}))$/
+      },
+      "City":{
+         "type":"string",
+         "required":true,
+         "trim":true
+      }
+   },
+   "bookings":{
+      "movie title":{
+         "type":"string",
+         "required":true,
+         "trim":true
+      },
+      "Showing time":{
+         "type":"string",
+         "required":true,
+         "trim":true
+      },
+      "number of seats":{
+         "type":"Number",
+         "required":true,
+         "trim":true
+      },
+      "Adult":{
+         "type":"Number",
+         "required":true,
+         "trim":true
+      },
+      "Child":{
+         "type":"Number",
+         "required":true,
+         "trim":true
+      },
+      "Concession":{
+         "type":"Number",
+         "required":true,
+         "trim":true
+      }
+   }
+}
+------------------------------------------------ Movies ------------------------------------------------
+
+{
+   "movie title":{
+      "type":"string",
+      "required":true,
+      "trim":true,
+      "unique":true
+   },
+   "description":{
+      "type":"string",
+      "required":true,
+      "trim":true
+   },
+   "director":{
+      "type":"string",
+      "required":true,
+      "trim":true
+   },
+   "duration":{
+      "type":"String",
+      "required":true,
+      "trim":true
+   },
+   "genre":{
+      "type":"string",
+      "required":true,
+      "trim":true,
+      "Array":[
+         "ListOfGenres"
+      ]
+   },
+   "showing times":{
+      "type":"string",
+      "required":true,
+      "trim":true
+   },
+   "release date":{
+      "type":"Date",
+      "required":true,
+      "trim":true
+   },
+   "language":{
+      "type":"string",
+      "required":true,
+      "trim":true
+   }
+}
+
+
+------------------------------------------------ Invoice ------------------------------------------------
+
+{
+   "username/usersId":{
+      "type":"string",
+      "required":true,
+      "trim":true
+   },
+   "subtotal":{
+      "type":"Decimal128",
+      "required":true,
+      "trim":true
+   },
+   "tax":{
+      "type":"Decimal128",
+      "required":true,
+      "trim":true
+   },
+   "total":{
+      "type":"Decimal128",
+      "required":true,
+      "trim":true
+   },
+   "date/time paid":{
+      "type":"Date.now()",
+      "required":true,
+      "trim":true
+   },
+   "movie title":{
+      "type":"String",
+      "required":true,
+      "trim":true
+   }
+}
+
+
+
+
