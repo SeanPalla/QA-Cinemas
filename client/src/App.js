@@ -1,3 +1,4 @@
+
 import Navbar from "./Navbar";
 import Classifications from "./pages/Classifications";
 import Bookings from "./pages/Bookings";
@@ -7,6 +8,7 @@ import Nearby from "./pages/Nearby";
 import DiscussionBoard from "./pages/DiscussionBoard";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
+import Nearby from "./pages/Nearby";
 
 import EmailForm from './components/EmailForm/EmailForm';
 
@@ -35,8 +37,7 @@ function App() {
       <div className="container">
         <EmailForm/>
       </div>
-    </div>
-        </>
+      </>
     );
 }
 export default App;
