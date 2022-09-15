@@ -8,11 +8,13 @@ import DiscussionBoard from "./pages/DiscussionBoard";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 
+import EmailForm from './components/EmailForm/EmailForm';
+
 function App() {
     return (
         <>
             <Navbar />;
-            <div className="container">
+            <div className="homeContainer">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/Bookings" element={<Bookings />} />
@@ -29,6 +31,11 @@ function App() {
                     />
                 </Routes>
             </div>
+            <div className="App">
+      <div className="container">
+        <EmailForm/>
+      </div>
+    </div>
         </>
     );
 }
