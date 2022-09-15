@@ -12,9 +12,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Admin from "./pages/Admin";
-import About from "./pages/About";
+import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
-import EmailForm from "./pages/EmailForm";
 import Deadpool from "./pages/movies/nowShowing/Deadpool";
 import BlackAdam from "./pages/movies/nowShowing/BlackAdam";
 import Jaws from "./pages/movies/nowShowing/Jaws";
@@ -27,12 +26,14 @@ import GuardiansOfTheGalaxyVol3 from "./pages/movies/upcomingReleases/GuardiansO
 
 import { Route, Routes } from "react-router-dom";
 
+// import EmailForm from "./components/EmailForm/EmailForm";
+
 function App() {
     return (
         <>
             <Header />
             <Navbar />;
-            <div className="container">
+            <div className="homeContainer">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/Profile" element={<Profile />} />
@@ -51,9 +52,9 @@ function App() {
                         path="/DiscussionBoard"
                         element={<DiscussionBoard />}
                     />
-                    <Route path="/About" element={<About />} />
+                    <Route path="/AboutUs" element={<AboutUs />} />
                     <Route path="/Contact" element={<Contact />} />
-                    <Route path="/EmailForm" element={<EmailForm />} />
+                    {/* <Route path="/EmailForm" element={<EmailForm />} /> */}
                     <Route path="/Deadpool" element={<Deadpool />} />
                     <Route path="/Black-Adam" element={<BlackAdam />} />
                     <Route path="/Jaws" element={<Jaws />} />
@@ -82,8 +83,8 @@ function App() {
                         element={<GuardiansOfTheGalaxyVol3 />}
                     />
                 </Routes>
+                <Footer />
             </div>
-            <Footer />
         </>
     );
 }

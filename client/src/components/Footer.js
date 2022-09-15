@@ -3,7 +3,7 @@ export default function Footer() {
     return (
         <footer className="footer">
             <ul>
-                <CustomLink to="/About">About</CustomLink>
+                <CustomLink to="/AboutUs">About</CustomLink>
                 <CustomLink to="/Contact">Contact</CustomLink>
                 <CustomLink to="/EmailForm">EmailForm</CustomLink>
             </ul>

@@ -42,6 +42,14 @@ const movieSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
+    coverImage: {
+        type: String,
+        require: true,
+    },
+    hrefLink: {
+        type: String,
+        require: true,
+    },
 });
 
 module.exports = mongoose.model("Movie", movieSchema);

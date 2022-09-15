@@ -45,11 +45,10 @@ body{
     color: white;
 }
 
-.container {
+.homeContainer {
     margin: 1rem;
     text-align: center;
-    font-family: 'Nikkyou Sans', sans-serif;                                      
-
+    font-family: 'Nikkyou Sans', sans-serif;                                       
 }
 .nav{
     background-color: #777;

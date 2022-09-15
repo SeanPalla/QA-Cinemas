@@ -31,6 +31,8 @@ exports.insertSingleMovie = async (req, res) => {
         showingTimes: req.body.showingTimes,
         releaseDate: req.body.releaseDate,
         language: req.body.language,
+        coverImage: req.body.coverImage,
+        hrefLink: req.body.hrefLink,
     });
 
     try {
@@ -52,6 +54,8 @@ exports.updateSingleMovie = async (req, res) => {
         showingTimes,
         releaseDate,
         language,
+        coverImage,
+        hrefLink,
     } = req.body;
 
     try {
@@ -66,8 +70,11 @@ exports.updateSingleMovie = async (req, res) => {
                 showingTimes,
                 releaseDate,
                 language,
+                coverImage,
+                hrefLink,
             }
         );
+
         res.json(updateMovie);
     } catch (err) {
         res.status(400).json({ message: err });
