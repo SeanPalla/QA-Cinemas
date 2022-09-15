@@ -37,6 +37,7 @@ function App() {
       <div className="container">
         <EmailForm/>
       </div>
+      </>
     );
 }
 export default App;
