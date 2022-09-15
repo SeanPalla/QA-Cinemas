@@ -41,6 +41,14 @@ const movieSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true
+    },
+    coverImage:{
+        type: String,
+        require: true
+    },
+    hrefLink:{
+        type: String,
+        require: true
     }
 });
 
