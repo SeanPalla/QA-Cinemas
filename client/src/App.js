@@ -30,7 +30,7 @@ function App() {
                     <Route
                         path="/DiscussionBoard"
                         element={<DiscussionBoard />}
-                    />
+                    />s
                 </Routes>
             </div>
             <div className="App">
