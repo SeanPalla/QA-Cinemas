@@ -2,7 +2,7 @@ require('../models/db');
 const Movie = require('../models/movie');
 
 exports.listMovies = async(req, res) => {
-    let { limit = 4, page = 1, genre, q } = req.query;
+    let { limit = 12, page = 1, genre, q } = req.query;
 
     const limitRecords = parseInt(limit);
     const skip = (page -1) * limit;
@@ -31,7 +31,8 @@ exports.insertSingleMovie = async(req, res) => {
         showingTimes: req.body.showingTimes,
         releaseDate: req.body.releaseDate,
         language: req.body.language,
-        coverImage: req.body.coverImage
+        coverImage: req.body.coverImage,
+        hrefLink: req.body.hrefLink
     });
 
     try {
@@ -45,11 +46,12 @@ exports.insertSingleMovie = async(req, res) => {
 exports.updateSingleMovie = async(req, res) => {
     let paramID = req.params.id;
     let { movieTitle, description, director, duration,
-        genre, showingTimes, releaseDate, language, coverImage } = req.body
+        genre, showingTimes, releaseDate, language, coverImage, hrefLink } = req.body
     
     try {
         const updateMovie = await Movie.updateOne({_id:paramID}, { movieTitle, description, director, duration,
-            genre, showingTimes, releaseDate, language, coverImage });
+            genre, showingTimes, releaseDate, language, coverImage, hrefLink });
+
         res.json(updateMovie);
     } catch (err) {
         res.status(400).json( { message: err })
