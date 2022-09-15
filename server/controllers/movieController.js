@@ -51,6 +51,7 @@ exports.updateSingleMovie = async(req, res) => {
     try {
         const updateMovie = await Movie.updateOne({_id:paramID}, { movieTitle, description, director, duration,
             genre, showingTimes, releaseDate, language, coverImage, hrefLink });
+
         res.json(updateMovie);
     } catch (err) {
         res.status(400).json( { message: err })
