@@ -1,8 +1,8 @@
 import React from "react";
-import RegForm from '../components/login-components/LoginForm';
-import RegHeader from '../components/login-components/LoginHeader';
+import RegForm from '../components/register-components/RegForm';
+import RegHeader from '../components/register-components/RegHeader';
 
-export default function Login() {
+export default function Register() {
     return (
         <div>
             <RegHeader />
