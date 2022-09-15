@@ -15,7 +15,16 @@ import Admin from "./pages/Admin";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import EmailForm from "./pages/EmailForm";
-import Deadpool from "./pages/movies/Deadpool";
+import Deadpool from "./pages/movies/nowShowing/Deadpool";
+import BlackAdam from "./pages/movies/nowShowing/BlackAdam";
+import Jaws from "./pages/movies/nowShowing/Jaws";
+import HowToTrainYourDragon from "./pages/movies/nowShowing/HowToTrainYourDragon";
+import ShawshankRedemption from "./pages/movies/nowShowing/ShawshankRedemption";
+import TicketToParadise from "./pages/movies/upcomingReleases/TicketToParadise";
+import GreatestBeerRunEver from "./pages/movies/upcomingReleases/GreatestBeerRunEver";
+import AvatarTheWayOfTheWater from "./pages/movies/upcomingReleases/AvatarTheWayOfTheWater";
+import GuardiansOfTheGalaxyVol3 from "./pages/movies/upcomingReleases/GuardiansOfTheGalaxyVol3";
+
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -46,9 +55,35 @@ function App() {
                     <Route path="/Contact" element={<Contact />} />
                     <Route path="/EmailForm" element={<EmailForm />} />
                     <Route path="/Deadpool" element={<Deadpool />} />
+                    <Route path="/Black-Adam" element={<BlackAdam />} />
+                    <Route path="/Jaws" element={<Jaws />} />
+                    <Route
+                        path="/How-To-Train-Your-Dragon"
+                        element={<HowToTrainYourDragon />}
+                    />
+                    <Route
+                        path="/The-Shawshank-Redemption"
+                        element={<ShawshankRedemption />}
+                    />
+                    <Route
+                        path="/Ticket-To-Paradise"
+                        element={<TicketToParadise />}
+                    />
+                    <Route
+                        path="/The-Greatest-Beer-Run-Ever"
+                        element={<GreatestBeerRunEver />}
+                    />
+                    <Route
+                        path="/Avatar-The-Way-Of-Water"
+                        element={<AvatarTheWayOfTheWater />}
+                    />
+                    <Route
+                        path="/Guardians-Of-The-Galaxy"
+                        element={<GuardiansOfTheGalaxyVol3 />}
+                    />
                 </Routes>
-                <Footer />
             </div>
+            <Footer />
         </>
     );
 }
