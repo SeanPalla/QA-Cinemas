@@ -30,7 +30,8 @@ exports.insertSingleMovie = async(req, res) => {
         genre: req.body.genre,
         showingTimes: req.body.showingTimes,
         releaseDate: req.body.releaseDate,
-        language: req.body.language
+        language: req.body.language,
+        coverImage: req.body.coverImage
     });
 
     try {
@@ -44,11 +45,11 @@ exports.insertSingleMovie = async(req, res) => {
 exports.updateSingleMovie = async(req, res) => {
     let paramID = req.params.id;
     let { movieTitle, description, director, duration,
-        genre, showingTimes, releaseDate, language } = req.body
+        genre, showingTimes, releaseDate, language, coverImage } = req.body
     
     try {
         const updateMovie = await Movie.updateOne({_id:paramID}, { movieTitle, description, director, duration,
-            genre, showingTimes, releaseDate, language });
+            genre, showingTimes, releaseDate, language, coverImage });
         res.json(updateMovie);
     } catch (err) {
         res.status(400).json( { message: err })
