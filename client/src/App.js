@@ -10,7 +10,8 @@ import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 import Nearby from "./pages/Nearby";
 
-import EmailForm from './components/EmailForm/EmailForm';
+import EmailForm from "./components/EmailForm/EmailForm";
+import GettingThere from "./components/GettingThere/GettingThere";
 
 function App() {
     return (
@@ -36,6 +37,7 @@ function App() {
             <div className="App">
       <div className="container">
         <EmailForm/>
+        <GettingThere/>
       </div>
       </>
     );
