@@ -26,9 +26,6 @@ import GuardiansOfTheGalaxyVol3 from "./pages/movies/upcomingReleases/GuardiansO
 
 import { Route, Routes } from "react-router-dom";
 
-// import EmailForm from "./components/EmailForm/EmailForm";
-// import GettingThere from "./components/GettingThere/GettingThere";
-
 function App() {
     return (
         <>

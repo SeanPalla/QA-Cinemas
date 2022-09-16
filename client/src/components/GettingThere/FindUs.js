@@ -14,23 +14,23 @@ const FindUs = () => {
     <Container maxWidth="md" className="beauty">
 
       <br></br>
-      <h1> QA Cinema </h1>
+      <h1 className="h1-location"> QA Cinema </h1>
       <br></br>
 
-      <h6> 1st Floor </h6> 
-      <h6> International House </h6>
-      <h6> 1 St Katharines Way </h6>
-      <h6> London </h6>
-      <h6> E1W 1UN </h6>
+      <h6 className="h6-location"> 1st Floor </h6> 
+      <h6 className="h6-location"> International House </h6>
+      <h6 className="h6-location"> 1 St Katharines Way </h6>
+      <h6 className="h6-location"> London </h6>
+      <h6 className="h6-location"> E1W 1UN </h6>
 
       <br></br>
-      <h6> Tel: 0345 074 7829 </h6>
-      <h6> Fax: 0345 074 7830 </h6>
+      <h6 className="h6-location"> Tel: 0345 074 7829 </h6>
+      <h6 className="h6-location"> Fax: 0345 074 7830 </h6>
 
       <hr></hr>
       <br></br>
       <Container>
-        <h1>Welcome</h1>
+        <h1 className="h1-location">Welcome</h1>
       </Container>
 
       <div className="video-responsive">
@@ -48,7 +48,7 @@ const FindUs = () => {
       <hr></hr>
       <br></br>
       <Container>
-        <h1> Where To Find Us </h1>
+        <h1 className="h1-location"> Where To Find Us </h1>
         <br></br>
         <GoogleMap></GoogleMap>
       </Container>
@@ -56,54 +56,53 @@ const FindUs = () => {
       <hr></hr>
       <br></br>
       <br></br>
-      <h4>Local Information</h4>
+      <h4 className="h4-location">Local Information</h4>
       <br></br>
       <br></br>
       <br></br>
 
       <div id="csvData">
-        <h3> <FaTrain />
+        <h3 className="h3-location"> <FaTrain />
           Train
         </h3>
-        <p>Fenchurch Street (5 minute walk), London Bridge (15 minute walk),
+        <p className="p-location">Fenchurch Street (5 minute walk), London Bridge (15 minute walk),
         Liverpool Street (15 minute walk)</p>
       </div>
 
       <div id="csvData">
-        <h3> <IoMdTrain />
+        <h3 className="h3-location"> <IoMdTrain />
           Tube
         </h3>
-        <p>London Bridge (15 minute walk), Tower Hill (5 minute walk)</p>
+        <p className="p-location">London Bridge (15 minute walk), Tower Hill (5 minute walk)</p>
       </div>
 
       <div id="csvData">
-        <h3> <BiAccessibility />
+        <h3 className="h3-location"> <BiAccessibility />
           Acessibility
         </h3>
-        <p>There's disability access, as the building has lifts going to all floors</p>
+        <p className="p-location">There's disability access, as the building has lifts going to all floors</p>
       </div>
 
       <div id="csvData">
-        <h3> <AiFillClockCircle />
+        <h3 className="h3-location"> <AiFillClockCircle />
           Opening Hours
         </h3>
-        <p>9:00am-10:00pm</p>
+        <p className="p-location">9:00am-10:00pm</p>
       </div>
 
       <div id="csvData">
-        <h3> <AiFillCar />
+        <h3 className="h3-location"> <AiFillCar />
           Parking
         </h3>
-        <p>There's no onsite parking, however people can park at Minories Car Park</p>
+        <p className="p-location">There's no onsite parking, however people can park at Minories Car Park</p>
       </div>
 
       <div id="csvData">
-        <h3> <AiOutlineWifi />
+        <h3 className="h3-location"> <AiOutlineWifi />
           Technology 
         </h3>
-        <p>WiFi, Portable Phone Chargers, WiFi-Printers</p>
+        <p className="p-location">WiFi, Portable Phone Chargers, WiFi-Printers</p>
       </div>
-
     </Container>
   );
 };
