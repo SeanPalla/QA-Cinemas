@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const invoiceSchema = new mongoose.Schema({
     total:{
-        type:mongoose.Types.Decimal128,
+        type: mongoose.Types.Decimal128,
         required:true,
         trim:true
     },
