@@ -2,32 +2,31 @@
 
 :root {
   --light: #d0d1d3;
-  --dark: #040d14;
   --green: #0df5e2;
 }
 
-body {
+.body-email-form {
   font-family: Poppins;
   background: var(--dark);
   line-height: 26px;
   margin: 0;
 }
 
-h1 {
+.h1-colour-is-neon-green {
   color: var(--green);
 }
 
-h4 {
+.h4-colour-is-almost-white {
   color: var(--light);
 }
 
-h6 {
+.h6-colour-is-almost-white-too {
   color: var(--light);
   text-align:center; 
   vertical-align: middle;
 }
 
-p {
+.p-colour-is-almost-white-as-well {
   font-size: 0.8rem;
   color: var(--light);
   text-align:center; 
@@ -41,12 +40,12 @@ p {
   margin-right: auto;
 }
 
-.App {
+.App-email-from {
   height: 75vh;
   margin-top: 15vh;
 }
 
-form {
+.form-email-form {
   margin-top: 20px;
   background: var(--dark);
 }
@@ -95,7 +94,7 @@ form {
   background-color: var(--green);
 }
 
-.submit-btn {
+.submit-btn-contact {
   background-color: var(--dark);
   color: var(--green) !important;
   padding: 15px 50px;
