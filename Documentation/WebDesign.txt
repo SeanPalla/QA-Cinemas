@@ -1,0 +1,16 @@
+Webpage design:
+
+Main background : Dark grey #333 #555 #777
+Text color : White #ffffff
+Font styling : NIKKYOU SANS = https://www.cdnfonts.com/nikkyou-sans.font
+Glow tint : neon/light blue #00c2cb 
+feature color  neon/light pink # 
+Header & footer : slightly darker background tint
+
+Buttons : Glow outside
+
+<H1> : once per page, everything else is a subheading
+ 
+ 
+ Colors used in glow animation: #b000ff ,#fd00ff ,#00B8FF , #8900ff ,#ff0677 ,#0051ff
+ 

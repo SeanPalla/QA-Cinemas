@@ -1,15 +1,9 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: 'Nikkyou Sans', sans-serif; ;
-    background-color: #333;
-}
 
 .container-watchList{
     margin: 50px;
+    font-family: 'Nikkyou Sans', sans-serif; ;
+    background-color: #333;
+    box-sizing: border-box;
 }
 
 .container-watchList >h2 {
