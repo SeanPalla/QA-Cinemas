@@ -58,12 +58,13 @@ const EmailForm = () => {
   return (
     <div className="ContactForm">
       <div className="container">
-      <h1 className='text-center'>QA Cinema</h1>
-      <h4 className='text-center'>Liked a movie? Have a complaint? Want to chat? Contact Us</h4>
+      <h1 className='h1-colour-is-neon-green'>QA Cinema</h1>
+      <h4 className='h4-colour-is-almost-white'>Liked a movie? Have a complaint? Want to chat? Contact Us</h4>
         <div className="row">
           <div className="col-12 text-center">
             <div className="contactForm">
               <form
+                className="form-email-form "
                 id="contact-form"
                 onSubmit={handleSubmit(onSubmit)}
                 noValidate
@@ -154,7 +155,7 @@ const EmailForm = () => {
                   </div>
                 </div>
                 <button
-                  className="submit-btn"
+                  className="submit-btn-contact"
                   disabled={disabled}
                   type="submit"
                 >
@@ -167,16 +168,15 @@ const EmailForm = () => {
         </div>
       </div>
       <div>
-        <img src={require("../../assets/qa-cinema-logo.png")} class="center" alt="qa-cinema-logo" />
         <div>
-          <p>
+          <p className="p-colour-is-almost-white-as-well">
           For more information or assistance, please email us at: 
           foxtrotcinemaqa@gmail.com. Or give us a call on 0345 074 7829. Our
           lines are open 7 days a week from 9am to 10pm, including Bank
           holidays. We are located near Tower of London, 3rd Floor, International 
           House, 1 St Katharine's Way, London E1W 1UN.
           </p>
-          <h6>
+          <h6 className="h6-colour-is-almost-white-too">
             All rights reserved QA Cinemas 2022 ©
           </h6>
         </div>
