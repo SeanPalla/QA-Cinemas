@@ -25,8 +25,10 @@ import AvatarTheWayOfTheWater from "./pages/movies/upcomingReleases/AvatarTheWay
 import GuardiansOfTheGalaxyVol3 from "./pages/movies/upcomingReleases/GuardiansOfTheGalaxyVol3";
 
 import { Route, Routes } from "react-router-dom";
+import Nearby from "./pages/Nearby";
 
-// import EmailForm from "./components/EmailForm/EmailForm";
+import EmailForm from "./components/EmailForm/EmailForm";
+import GettingThere from "./components/GettingThere/GettingThere";
 
 function App() {
     return (
