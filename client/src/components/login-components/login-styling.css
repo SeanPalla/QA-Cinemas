@@ -15,4 +15,22 @@
     gap: 15px;
     width: 275px;
     margin: auto;
+    background-color: #333;
+}
+
+.login-form--input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: sans-serif;
+}
+
+.login-form--input::-webkit-input-placeholder {
+    font-family: 'Nikkyou Sans', sans-serif; 
+}
+
+.login-form--button {
+    border: none;
+    border-radius: 3px;
 }

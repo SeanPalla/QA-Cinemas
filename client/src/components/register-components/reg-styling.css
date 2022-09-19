@@ -15,4 +15,56 @@
     gap: 15px;
     width: 275px;
     margin: auto;
+    background-color: #333;
+}
+
+.reg-form--input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    font-family: sans-serif;
+}
+
+.reg-form--input::-webkit-input-placeholder {
+    font-family: 'Nikkyou Sans', sans-serif; 
+}
+
+.reg-form--birth-date{
+    /* font-family: 'Nikkyou Sans', sans-serif; 
+    background-color: #ffffff; */
+    border-radius: 10px;
+}
+
+#birthdate-label {
+    color: #ffffff;
+}
+
+#reg-form--password-input::-webkit-input-placeholder {
+    font-family: 'Nikkyou Sans', sans-serif;
+    letter-spacing: 0em;
+}
+
+#reg-form--password-input {
+    font-family: 'Nikkyou Sans', sans-serif;
+    letter-spacing: 0.15em;
+}
+
+#reg-form--confirm-password::-webkit-input-placeholder {
+    font-family: 'Nikkyou Sans', sans-serif;
+    letter-spacing: 0em;
+}
+
+#reg-form--confirm-password {
+    font-family: 'Nikkyou Sans', sans-serif;
+    letter-spacing: 0.15em;
+}
+
+#reg-form--phonenumber-input {
+    font-family: 'Nikkyou Sans', sans-serif;
+}
+
+.reg-form--button {
+    border: none;
+    border-radius: 3px;
 }
