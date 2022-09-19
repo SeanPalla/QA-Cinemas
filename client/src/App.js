@@ -26,8 +26,6 @@ import GuardiansOfTheGalaxyVol3 from "./pages/movies/upcomingReleases/GuardiansO
 
 import { Route, Routes } from "react-router-dom";
 
-// import EmailForm from "./components/EmailForm/EmailForm";
-
 function App() {
     return (
         <>
@@ -88,4 +86,5 @@ function App() {
         </>
     );
 }
+
 export default App;
