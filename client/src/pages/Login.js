@@ -5,7 +5,7 @@ import '../components/login-components/login-styling.css';
 
 export default function Login() {
     return (
-        <div>
+        <div className="login--main-container">
             <LoginHeader />
             <LoginForm />
         </div>

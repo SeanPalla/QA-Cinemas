@@ -5,7 +5,7 @@ import '../components/register-components/reg-styling.css';
 
 export default function Register() {
     return (
-        <div>
+        <div className="register--main-container">
             <RegHeader />
             <RegForm />
         </div>

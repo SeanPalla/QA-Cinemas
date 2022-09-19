@@ -10,16 +10,19 @@ export default function LoginForm() {
                 <Form.Control
                     type="text"
                     placeholder="Email Address"
-                    className="login-form--input"
+                    className="form-control login-form--input"
                 />
                 <Form.Control
-                    type="text"
+                    type="password"
                     placeholder="Password"
-                    className="login-form--input"
+                    className="form-control login-form--input"
                 />
-                <Button className="login-form--button">
+                <Button className="form-control" id="login-form--button">
                     Log In
                 </Button>
+                {/* <InputGroup.Text>
+                    <i onClick={clickHandler} class={showPass ? 'fas fa-eye-slash' : 'fas fa-eye'}></i>
+                </InputGroup.Text> */} 
             </Form>
         </div>
     );

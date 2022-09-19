@@ -1,21 +1,43 @@
+
+:root {
+    --green: #0df5e2;
+}
+
+.register--main-container {
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 300px;
+    width: 550px;
+    background-color: #535859;
+    border-radius: 10px;
+}
+
+
 .register-header {
     display: flex;
     justify-content: center;
     padding: 10px 10px;
+    color: var(--green);
+    padding-top: 50px;
+    padding-bottom: 30px;
 }
 
 .container--reg-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 300px;
+    padding-bottom: 200px;
 }
 
 .register-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 15px;
     width: 275px;
     margin: auto;
-    background-color: #333;
 }
 
 .reg-form--input {
@@ -26,13 +48,11 @@
     font-family: sans-serif;
 }
 
-.reg-form--input::-webkit-input-placeholder {
+.reg-form--input::placeholder {
     font-family: 'Nikkyou Sans', sans-serif; 
 }
 
 .reg-form--birth-date{
-    /* font-family: 'Nikkyou Sans', sans-serif; 
-    background-color: #ffffff; */
     border-radius: 10px;
 }
 
@@ -64,7 +84,28 @@
     font-family: 'Nikkyou Sans', sans-serif;
 }
 
-.reg-form--button {
-    border: none;
-    border-radius: 3px;
+#reg-form--button {
+    background-color: var(--dark);
+    color: var(--green);
+    padding: 8px 50px;
+    border: 2px solid var(--green);
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+#reg-form--button:hover {
+    background-color: var(--green);
+    color: var(--dark);
+    border: 2px solid var(--green);
+}
+
+#reg-form--button:disabled:hover {
+    background-color: var(--dark);
+    color: var(--green);
+    cursor: wait;
+}
+
+.reg-form--terms {
+    padding: 20px;
 }
