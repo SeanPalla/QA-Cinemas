@@ -1,10 +1,10 @@
-import GettingThere from "../components/GettingThere/GettingThere";
+import Screens from "../components/Screens/Screens";
 
 export default function Location() {
     return (
         <div className="App">
             <div className="container">
-                <GettingThere />
+                <Screens />
             </div>
         </div>
     );
