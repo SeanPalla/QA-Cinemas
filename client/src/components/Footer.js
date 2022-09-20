@@ -5,7 +5,6 @@ export default function Footer() {
             <ul>
                 <CustomLink to="/AboutUs">About</CustomLink>
                 <CustomLink to="/Contact">Contact</CustomLink>
-                <CustomLink to="/EmailForm">EmailForm</CustomLink>
             </ul>
             <Link to="/" className="Home">
                 <img
