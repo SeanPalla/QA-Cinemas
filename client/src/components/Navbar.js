@@ -7,6 +7,7 @@ export default function Navbar() {
                 <CustomLink to="/Bookings">Bookings</CustomLink>
                 <CustomLink to="/Classifications">Classifications</CustomLink>
                 <CustomLink to="/OpeningTimes">Opening Times</CustomLink>
+                <CustomLink to="/Screens">Screens</CustomLink>
                 <CustomLink to="/Location">Location</CustomLink>
                 <CustomLink to="/Nearby">Nearby</CustomLink>
                 <CustomLink to="/DiscussionBoard">Discussion</CustomLink>
