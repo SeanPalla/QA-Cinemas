@@ -60,7 +60,7 @@
     color: #ffffff;
 }
 
-#reg-form--password-input::-webkit-input-placeholder {
+#reg-form--password-input::placeholder {
     font-family: 'Nikkyou Sans', sans-serif;
     letter-spacing: 0em;
 }
@@ -70,14 +70,14 @@
     letter-spacing: 0.15em;
 }
 
-#reg-form--confirm-password::-webkit-input-placeholder {
+#reg-form--confirm-password::placeholder {
     font-family: 'Nikkyou Sans', sans-serif;
     letter-spacing: 0em;
 }
 
 #reg-form--confirm-password {
     font-family: 'Nikkyou Sans', sans-serif;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
 }
 
 #reg-form--phonenumber-input {

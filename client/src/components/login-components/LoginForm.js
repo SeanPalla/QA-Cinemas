@@ -16,6 +16,7 @@ export default function LoginForm() {
                     type="password"
                     placeholder="Password"
                     className="form-control login-form--input"
+                    id="login-form--password"
                 />
                 <Button className="form-control" id="login-form--button">
                     Log In
