@@ -2,12 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const commentSchema = new mongoose.Schema({
-    comment_id: {
-        type:Number,
-        unique: true,
-        required: true,
-    }, // custom Primary key was added to allow easier identidication
-    comment:{
+    textInfo:{
         type:String,
         required: true,
         maxLength: 300,
@@ -19,20 +14,29 @@ const commentSchema = new mongoose.Schema({
     },
     rating: {
         type: Number,
-        required: true,
         trim: true,
         min:0,
         max:5,
+        default:null
     },
-    user_id:{
-        type: Schema.Types.ObjectId,
-        ref: 'users',
+    userId:{
+        type: Number,
         required: true,
     },
-    movie_id: {
+    movieId: {
         type: Schema.Types.ObjectId,
         ref: 'Movie',
+        default: null
+    },
+    username:{
+        type: String,
         required: true,
+        trim: true,
+    },
+    parentId:{
+        type: Schema.Types.ObjectId,
+        ref: 'commentSchema',
+        default: null,
     }
 });
 module.exports = mongoose.model("Comment", commentSchema);
