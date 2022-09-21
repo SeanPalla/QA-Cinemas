@@ -6,8 +6,12 @@ const auth = require("./routes/authRouter");
 const cors = require("cors");
 require("dotenv").config();
 
+const cors = require("cors");
+require("dotenv").config();
+
 const app = express();
 const port = process.env.PORT || 5000;
+// CHANGE BACK TO 5000 BEFORE COMMIT
 
 app.use(
   expressSession({

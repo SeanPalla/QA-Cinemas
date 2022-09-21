@@ -1,0 +1,57 @@
+svg path {
+  color: #0df5e2;
+  }
+
+#csvData {
+  text-align: center;
+  height: 200px;
+  float: left;
+  width: 50%;
+  }
+
+.h1-location{
+  color: #0df5e2;
+  text-align: center;
+  }
+
+.h6-location{
+  color: white;
+  display: block;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  margin: 0;
+  }
+  
+.h4-location{
+  color: white;
+  text-align: center;
+  }
+
+.h3-location{
+  color: white;
+  text-align: center;
+  }
+
+.p-location {
+  color: white;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  }
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+  
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}

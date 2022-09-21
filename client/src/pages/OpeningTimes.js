@@ -1,3 +1,11 @@
-export default function OpeningTimes() {
-    return <h1>Opening Times</h1>;
+import OpeningTimes from "../components/OpeningTimes/OpeningTimes";
+
+export default function Location() {
+    return (
+        <div className="App">
+            <div className="container">
+                <OpeningTimes />
+            </div>
+        </div>
+    );
 }

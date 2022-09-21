@@ -16,11 +16,12 @@ exports.listComments = async(req, res) => {
 //Create a comment
 exports.insertComment = async(req, res) => {
     const newComment = new Comment ({
-        comment_id: req.body.comment_id,
-        user_id: req.body.user_id,
-        comment: req.body.comment,
-        rating: req.body.rating,
-        movie_id: req.body.movie_id
+        userId: req.body.userId, //number
+        textInfo: req.body.textInfo, //string
+        rating: req.body.rating, //number , not req, default null
+        movieId: req.body.movie_id, //object ID of movie , not required,default null
+        username: req.body.username, //string
+        parentId: req.body.parentId //number, not required ,default null
     });
     try{
         await newComment.save();
@@ -33,9 +34,10 @@ exports.insertComment = async(req, res) => {
 //Update a comment by Id
 exports.updateComment = async(req, res, next) => {
     let paramID = req.params.id;
-    let { userName, comment, rating} = req.body;
+    let { textInfo} = req.body;
+    
     try{
-        const updateComment = await Comment.updateOne({_id: paramID}, { userName, comment, rating});
+        const updateComment = await Comment.updateOne({_id: paramID}, {textInfo});
         if (updateComment){
             res.status(200).json(updateComment);
         }else{

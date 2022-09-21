@@ -1,0 +1,32 @@
+.about-card {
+    display: flex;
+    border: solid;
+    padding: 15px;
+    padding-top: 30px;
+    margin: 15px;
+}
+
+.about-card--bio {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.about-card--info-container {
+    display: flex-column;
+    align-items: center;
+}
+
+.image-placeholder {
+    width: 140px;
+    height: 175px;
+    border: solid;
+    margin-left: 70px
+}
+
+.about-card--person-name {
+    margin: 15px;
+    margin-left: 75px;
+}
+
+.about-card--contact-info {
+}
