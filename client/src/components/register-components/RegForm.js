@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import renderPWTooltip from './password_tooltip'; 
 import regUser from './registrationLogic';
 import * as yup from 'yup';
-import Formik from 'formik';
+import { Formik } from 'formik';
 
 export default function RegForm() {
 

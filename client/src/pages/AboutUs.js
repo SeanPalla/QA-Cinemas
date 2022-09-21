@@ -12,9 +12,8 @@ export default function AboutUs() {
             />
         )
     }) 
-    console.log(cards)
     return (
-        <div>
+        <div className="about--main-container">
             {cards}
         </div>
     );

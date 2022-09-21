@@ -42,10 +42,6 @@
     margin: auto;
 }
 
-.reg-form--sub-wrapper {
-    /* need to figure out how to stop the offset */ 
-}
-
 .reg-form--left-side {
     padding-right:20px;
 }
