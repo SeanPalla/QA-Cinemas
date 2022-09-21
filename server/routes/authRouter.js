@@ -2,21 +2,16 @@ const passport = require('passport');
 const router = new require('express').Router();
 const User = require('../models/user');
 const authController = require('../controllers/authController');
+const LocalStrategy = require('passport-local').Strategy;
 
-// router.get('/login', (request, response) => {
-//     response.sendFile(global.__basedir + '==NEEDS FRONTEND FILE==');
-// });
+passport.use(new LocalStrategy(User.authenticate()));
 
-// router.get('/register', (request, response) => {
-//     response.sendFile(global.__basedir + '==NEEDS FRONTEND FILE==');
-// });
-
-router.post('/login', passport.authenticate('local', {
+router.post('/api/login', passport.authenticate('local', {
     failureMessage: 'Invalid login credentials.',
-    failureRedirect: '/login'
+    failureRedirect: 'https://localhost:3000/'     // redirect to necessary point
 }), authController.loginRequest);
 
-router.post('/register', authController.register);
-router.post('/logout', authController.logout);
+//router.post('/register', authController.register);
+router.post('/api/logout', authController.logout);
 
 module.exports = router;
