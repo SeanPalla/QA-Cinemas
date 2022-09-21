@@ -25,13 +25,6 @@ const UserSchema = new mongoose.Schema({
         unique:true,
         trim:true
      },
-     password:{
-        type:String,
-        required:true,
-        minLength:7,
-        match:/(?=^.{6,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*/,
-        trim:true
-     },
      phoneNumber:{
         type:String,
         minLength:11,
@@ -80,4 +73,13 @@ const UserSchema = new mongoose.Schema({
  UserSchema.plugin(passportLocalMongoose);
  const UserModel = new mongoose.model("users", UserSchema);
  module.exports = UserModel;
+
+ // Removed as was not necessary 
+ //   password:{
+   //      type:String,
+   //      required:true,
+   //      minLength:7,
+   //      match:/(?=^.{6,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*/,
+   //      trim:true
+   //   },
 

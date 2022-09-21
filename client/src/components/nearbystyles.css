@@ -1,4 +1,4 @@
-.Heading {
+.nearby-heading {
     font-size: xxx-large;
     font-family: 'Nikkyou Sans', sans-serif;
     color: white; 
@@ -12,7 +12,7 @@
     text-shadow: 4px 4px 0 #8900ff;
 }
 
-.SubHeading {
+.nearby-subHeading {
     font-size: x-large;
     font-family: 'Nikkyou Sans', sans-serif;
     color: white; 
@@ -23,11 +23,11 @@
     margin-left: auto; 
     margin-right: auto; 
     letter-spacing: 1px;
-    text-shadow: 4px 4px 0 #ff0677;
+    text-shadow: 2px 2px 0 #ff0677;
 
 } 
 
-.Title {
+.nearby-title {
     font-size: large;
     font-family: 'Nikkyou Sans', sans-serif;
     color: white;
@@ -40,10 +40,10 @@
     margin-top: -7rem;
     align-self: center;
     letter-spacing: 1px;
-    text-shadow: 4px 4px 0 #ff0677;
+    text-shadow: 2px 2px 0 #ff0677;
 }
 
-.Image {
+.nearby-image {
     align-items: left;
     width: 15rem;
     height: 10rem;
@@ -53,7 +53,7 @@
     left: -4.5rem;
 }
 
-.desc {
+.nearby-desc {
     font-family: 'Nikkyou Sans', sans-serif;
     color: white;
     width: 1500px;
@@ -66,7 +66,7 @@
     
 }
 
-.info {
+.nearby-info {
     font-family: 'Nikkyou Sans', sans-serif;
     color: white;  
     float: right;
@@ -78,7 +78,7 @@
 
 body { background-color: #333;}
 
-.object {
+.nearby-object {
     background-color: #555;
     padding: 6rem;
     margin-bottom: 4rem;

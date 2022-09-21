@@ -1,3 +1,9 @@
+import Comments from "../components/CommentUI/Comments";
+
 export default function DiscussionBoard() {
-    return <h1>Discussion Board</h1>;
+    return (
+        <div>
+            <Comments />
+        </div>
+    );
 }

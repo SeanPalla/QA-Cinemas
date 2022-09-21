@@ -1,53 +1,80 @@
-import React, { Component } from "react";
-import GoogleMapReact from "google-map-react";
+import React from "react";
+import {
+  InfoWindow,
+  Circle,
+  GoogleMap,
+  LoadScript,
+} from "@react-google-maps/api";
 
-const AnyReactComponent = ({ text }) => (
-  <div
-    style={{
-      color: "white",
-      background: "grey",
-      padding: "15px 10px",
-      display: "inline-flex",
-      textAlign: "center",
-      alignItems: "center",
-      justifyContent: "center",
-      borderRadius: "100%",
-      transform: "translate(-50%, -50%)",
-    }}
-  >
-    {text}
-  </div>
-);
+const containerStyle = {
+  width: "800px",
+  height: "500px",
+  display: "inline-block",
+};
 
-class Map extends Component {
-  static defaultProps = {
-    center: {
-      lat: 51.50762020509655,
-      lng: -0.07379389154198485,
-    },
-    zoom: 16,
-  };
+const center = {
+  lat: 51.50762020509655,
+  lng: -0.07379389154198485,
+};
 
-  render() {
-    return (
-      <div style={{ height: "50vh", width: "100%" }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{
-            key: "AIzaSyBrxyovMrBmI_cc42sVzkDdwHn6Pd8d7Uw", //Change key
-            language: "en",
-          }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
-          <AnyReactComponent
-            lat={51.50762020509655}
-            lng={-0.07379389154198485}
-            text={"We Are Here"}
+const options = {
+  strokeColor: "#FF0000",
+  strokeOpacity: 0.8,
+  strokeWeight: 2,
+  fillColor: "#FF0000",
+  fillOpacity: 0.35,
+  clickable: false,
+  draggable: false,
+  editable: false,
+  visible: true,
+  radius: 30,
+  zIndex: 1,
+};
+
+const onLoad = (circle) => {
+  console.log("Circle onLoad circle: ", circle);
+};
+
+const onUnmount = (circle) => {
+  console.log("Circle onUnmount circle: ", circle);
+};
+
+const position = { lat: 51.50762020509655, lng: -0.07379389154198485 };
+
+const divStyle = {
+  background: `white`,
+  border: `1px solid #ccc`,
+  padding: 15,
+};
+
+function MyComponent() {
+  return (
+    <LoadScript googleMapsApiKey="AIzaSyAIV6-66eS0UvUnAvesQLEC_eBr4MsRWMU">
+      <GoogleMap 
+        id="circle-example"
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={16}
+      >
+        {
+          <Circle
+            onLoad={onLoad}
+            onUnmount={onUnmount}
+            center={center}
+            options={options}
           />
-        </GoogleMapReact>
-      </div>
-    );
-  }
+        }
+
+        {
+          <InfoWindow onLoad={onLoad} position={position}>
+            <div style={divStyle}>
+              <h1>We Are Here</h1>
+            </div>
+          </InfoWindow>
+        }
+      </GoogleMap>
+    </LoadScript>
+  );
 }
 
-export default Map;
+export default React.memo(MyComponent);

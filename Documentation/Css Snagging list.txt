@@ -1,0 +1,78 @@
+Tasks left to complete: 
+
+Create Profile Page
+Create Film template for each film
+
+
+Header - 
+css - general make it look prettier and move login/register buttons to the right next to search bar
+
+Footer - 
+css -
+general make it look prettier and adjust sizes
+Stick to the bottom of the page 
+
+Navbar - 
+Css - 
+Seems ok just basic
+when you search for something in the serch bar while its small you cant click on the serch text it selects a navbar item behind it
+
+Homepage - 
+Css - 
+White space at the bottom of each card - hiding the text
+Some of the cards are different length (Shawshank redemption and How to train your dragon) i think this is due to different ammounts of text
+upcoming releases doesnt scroll and no left or right buttons for it
+
+Bookings - 
+css - needs to be completed 
+
+Classifications - 
+css - 
+Spacing between headers 
+Bit of text formatting
+When page shortens text runs of the side of the screen instead of squishing into the boxes
+
+Opening Times - 
+Css - 
+basic but its just what we need
+
+Screens - 
+Css - 
+Seems fine just a bit of text formatting/spacing at the bottom
+When page shrinks text all overwrites each other but i dont know what we can do with this, maybe make the page force scroll 
+
+Location -
+Css - 
+Looks good
+when the page gets small the map doesnt shrink like the rest of the items
+
+Nearby - 
+Css - 
+Title spacing needs adjusting 
+Some of the headers have lost color 
+When page shortens text runs of the side of the screen instead of squishing into the boxes
+
+Discussion Board - 
+Css - 
+Needs a better structure as its hard to read whats going on 
+Just some general css tidying required
+
+About - 
+Css - 
+Needs to be formatted better, needs text coloring changed as its hards to read
+When page shortens text runs of the side of the screen instead of extending down the page
+
+Contact - 
+Css- 
+Page looks good to me
+
+
+Register - 
+Css-
+Just needs some added fields for address, just some general form tidying
+
+Login - 
+Css - 
+Seems good to me
+
+

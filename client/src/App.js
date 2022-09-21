@@ -26,6 +26,8 @@ import GuardiansOfTheGalaxyVol3 from "./pages/movies/upcomingReleases/GuardiansO
 
 import { Route, Routes } from "react-router-dom";
 
+import Screens from "./pages/Screens";
+
 function App() {
     return (
         <>
@@ -44,6 +46,7 @@ function App() {
                         element={<Classifications />}
                     />
                     <Route path="/OpeningTimes" element={<OpeningTimes />} />
+                    <Route path="/Screens" element={<Screens />} />
                     <Route path="/Location" element={<Location />} />
                     <Route path="/Nearby" element={<Nearby />} />
                     <Route
@@ -52,7 +55,6 @@ function App() {
                     />
                     <Route path="/AboutUs" element={<AboutUs />} />
                     <Route path="/Contact" element={<Contact />} />
-                    {/* <Route path="/EmailForm" element={<EmailForm />} /> */}
                     <Route path="/Deadpool" element={<Deadpool />} />
                     <Route path="/Black-Adam" element={<BlackAdam />} />
                     <Route path="/Jaws" element={<Jaws />} />
