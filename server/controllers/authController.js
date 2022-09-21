@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user');
-const passport = require('../passport/setup');
 const AuthUtils = require('../util/authUtils');
 
 function isJsonData(req, res, next) {
@@ -11,36 +9,42 @@ function isJsonData(req, res, next) {
     next();
 };
 
-exports.loginRequest = (request, response) => {
-    response.status(200).send(request.user._id);
+exports.loginRequest = (req, res) => {
+    console.log("Login request reached")
+    try{
+        res.status(200).send(` Testing ${req.user.username}`);
+    }catch (err){
+        console.error(err);
+        response.status(400).send('Something went wrong registering the user');
+    }
 };
 
-exports.register = async (request, response, next) => {
-    try {
-        // register the user
-        const user = await User.register(new User({
-            fullName: request.body.fullName,
-            dateOfBirth: request.body.dateOfBirth,
-            email: request.body.email,
-            username: request.body.username,
-            password: request.body.password,
-            phoneNumber: request.body.phoneNumber,
-            role: request.body.role,
-            address: request.body.address
-        }), request.body.password); 
+// exports.register = async (request, response, next) => {
+//     try {
+//         // register the user
+//         const user = await User.register(new User({
+//             fullName: request.body.fullName,
+//             dateOfBirth: request.body.dateOfBirth,
+//             email: request.body.email,
+//             username: request.body.username,
+//             password: request.body.password,
+//             phoneNumber: request.body.phoneNumber,
+//             role: request.body.role,
+//             address: request.body.address
+//         }), request.body.password); 
         
-        // if we have a user object send 200 bc was successful
-        if (user) {
-            passport.authenticate("local", {session: false});
-            return response.status(200).send();
-        }
-    // if unsuccessful throw error
-    } catch (error) {
-        console.error(error);
-        return next(error);
-    }
-    response.status(400).send('An issue occured while registering the user');
-};
+//         // if we have a user object send 200 bc was successful
+//         if (user) {
+//             passport.authenticate("local", {session: false});
+//             return response.status(200).send();
+//         }
+//     // if unsuccessful throw error
+//     } catch (error) {
+//         console.error(error);
+//         return next(error);
+//     }
+//     response.status(400).send('An issue occured while registering the user');
+// };
 
 exports.logout = (request, response) => {
     request.logout((error) => {
