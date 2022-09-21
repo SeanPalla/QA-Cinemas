@@ -3,7 +3,6 @@ const expressSession = require("express-session");
 const { default: mongoose } = require("mongoose");
 const passport = require("./passport/setup");
 const auth = require("./routes/authRouter");
-const cors = require("cors");
 require("dotenv").config();
 
 const cors = require("cors");
