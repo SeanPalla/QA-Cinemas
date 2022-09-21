@@ -2,16 +2,19 @@ const express = require("express");
 const expressSession = require("express-session");
 const { default: mongoose } = require("mongoose");
 const passport = require("./passport/setup");
+
 const auth = require("./routes/authRouter");
 require("dotenv").config();
 
+const cookieParser = require("cookie-parser");
+
 const cors = require("cors");
-require("dotenv").config();
-
 const app = express();
-const port = process.env.PORT || 5000;
-// CHANGE BACK TO 5000 BEFORE COMMIT
 
+// Setting port varibale  to .env variable , else will default to 5001;
+const port = process.env.PORT || 5001;
+
+// Generate a Session config
 app.use(
   expressSession({
     secret: process.env.SECRET,
@@ -23,11 +26,20 @@ app.use(
   })
 );
 
-app.use(cors());
+// Point to client server
+app.use(cors({
+    origin: process.env.CLIENT,
+    credentials: true
+})
+);
+//app.use(cookieParser(process.env.CLIENT));
+
+
 app.use(express.json());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
+app.use(cookieParser(process.env.SECRET));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -47,4 +59,4 @@ app.use("/", userRoute);
 app.use("/", authRoute);
 app.use("/", paymentRoutes);
 
-app.listen(port, () => console.log("Working"));
+app.listen(port, () => console.log(`Working on ${port}`));

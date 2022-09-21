@@ -1,4 +1,5 @@
 require('../models/db')
+const passport = require('../passport/setup');
 const UserNotFoundError = require('../error/UserNotFoundError');
 const User = require('../models/user');
 
@@ -37,14 +38,32 @@ exports.createUser =  async (req, res, next) => {
     try {
         const user = new User(req.body);
         await user.save();
-
-        res.status(201)
-                .setHeader("Content-Location", `/user/${user.id}`)
-                .json(user);
+        if (user){
+            res.status(201)
+                    .setHeader("Content-Location", `/user/${user.id}`)
+                    .json(user);
+        }
     } catch (error) {
         next(error);
     }
 };
+
+exports.register = async (req, res, next) =>{
+    try{
+        const user = await User.register(new User(
+                req.body
+                ), req.body.password); // register(userWithUsername, password)
+        if (user){
+            passport.authenticate("local");
+            await user.save();
+            res.status(201)
+                .setHeader("Content-Location", `/user/${user._id}`)
+                .json(user);
+        }
+         }catch (error) {
+         res.json({success: false, message: `${error}`});
+    }
+}
 
 exports.updateUser =  async (req, res, next) => {
     const user = await User.updateOne({ _id: req.params.id }, req.body);
