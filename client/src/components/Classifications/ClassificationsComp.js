@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./classifications.css";
 
 export default function ClassificationsComp(props) {
