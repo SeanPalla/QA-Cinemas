@@ -3,6 +3,8 @@ const expressSession = require("express-session");
 const { default: mongoose } = require("mongoose");
 const passport = require("./passport/setup");
 const auth = require("./routes/authRouter");
+const cors = require("cors");
+require("dotenv").config();
 
 const cors = require("cors");
 require("dotenv").config();
@@ -12,14 +14,14 @@ const port = process.env.PORT || 5000;
 // CHANGE BACK TO 5000 BEFORE COMMIT
 
 app.use(
-    expressSession({
-        secret: process.env.SECRET,
-        resave: false,
-        saveUninitialized: false, // only want sessions upon logging in
-        cookie: {
-            maxAge: 1 * 60 * 1000, // 1 hour cookie
-        },
-    })
+  expressSession({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false, // only want sessions upon logging in
+    cookie: {
+      maxAge: 1 * 60 * 1000, // 1 hour cookie
+    },
+  })
 );
 
 app.use(cors());
@@ -36,6 +38,7 @@ const authRoute = require("./routes/authRouter");
 const userRoute = require("./routes/userRouter");
 const bookingRoute = require("./routes/bookingRoutes");
 const invoiceRoutes = require("./routes/invoiceRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
 
 app.use("/", movieRoute);
 app.use("/", commentRoute);
@@ -43,5 +46,6 @@ app.use("/", invoiceRoutes);
 app.use("/", bookingRoute);
 app.use("/", userRoute);
 app.use("/", authRoute);
+app.use("/", paymentRoutes);
 
 app.listen(port, () => console.log("Working"));
