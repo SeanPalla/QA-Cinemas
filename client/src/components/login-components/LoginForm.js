@@ -24,6 +24,11 @@ export default function LoginForm() {
                 {/* <InputGroup.Text>
                     <i onClick={clickHandler} class={showPass ? 'fas fa-eye-slash' : 'fas fa-eye'}></i>
                 </InputGroup.Text> */} 
+                <p className="login-page--no-account">
+                    Don't have an account?
+                    <br/>
+                    <a className="login-page--signup-link" href="/Register">Sign up here</a>
+                </p>
             </Form>
         </div>
     );

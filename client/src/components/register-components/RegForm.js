@@ -69,6 +69,13 @@ export default function RegForm() {
                     Register
                 </Button>
             </Form>
+
+            <p className="register--already-account">
+                Already have an account?
+                <br/>
+                <a className="register--login-link" href="/Login">Log in</a>
+            </p>
+
             <div className="reg-form--terms">
                 <p>Terms & Conditions</p>
             </div>
