@@ -2,10 +2,13 @@ const express = require("express");
 const expressSession = require("express-session");
 const { default: mongoose } = require("mongoose");
 const passport = require("./passport/setup");
+
+const auth = require("./routes/authRouter");
+require("dotenv").config();
+
 const cookieParser = require("cookie-parser");
 
 const cors = require("cors");
-require("dotenv").config();
 const app = express();
 
 // Setting port varibale  to .env variable , else will default to 5001;
@@ -13,24 +16,24 @@ const port = process.env.PORT || 5001;
 
 // Generate a Session config
 app.use(
-  expressSession({
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: false, // only want sessions upon logging in
-    cookie: {
-      maxAge: 1 * 60 * 1000, // 1 hour cookie
-    },
-  })
+    expressSession({
+        secret: process.env.SECRET,
+        resave: false,
+        saveUninitialized: false, // only want sessions upon logging in
+        cookie: {
+            maxAge: 1 * 60 * 1000, // 1 hour cookie
+        },
+    })
 );
 
 // Point to client server
-app.use(cors({
-    origin: process.env.CLIENT,
-    credentials: true
-})
+app.use(
+    cors({
+        origin: process.env.CLIENT,
+        credentials: true,
+    })
 );
 //app.use(cookieParser(process.env.CLIENT));
-
 
 app.use(express.json());
 app.use(express.static("public"));
