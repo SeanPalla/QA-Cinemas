@@ -13,14 +13,14 @@ const port = process.env.PORT || 5001;
 
 // Generate a Session config
 app.use(
-    expressSession({
-        secret: process.env.SECRET,
-        resave: false,
-        saveUninitialized: false, // only want sessions upon logging in
-        cookie: {
-            maxAge: 1 * 60 * 1000, // 1 hour cookie
-        },
-    })
+  expressSession({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false, // only want sessions upon logging in
+    cookie: {
+      maxAge: 1 * 60 * 1000, // 1 hour cookie
+    },
+  })
 );
 
 // Point to client server
@@ -46,6 +46,7 @@ const authRoute = require("./routes/authRouter");
 const userRoute = require("./routes/userRouter");
 const bookingRoute = require("./routes/bookingRoutes");
 const invoiceRoutes = require("./routes/invoiceRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
 
 app.use("/", movieRoute);
 app.use("/", commentRoute);
@@ -53,5 +54,6 @@ app.use("/", invoiceRoutes);
 app.use("/", bookingRoute);
 app.use("/", userRoute);
 app.use("/", authRoute);
+app.use("/", paymentRoutes);
 
 app.listen(port, () => console.log(`Working on ${port}`));
