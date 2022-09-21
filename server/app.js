@@ -2,10 +2,13 @@ const express = require("express");
 const expressSession = require("express-session");
 const { default: mongoose } = require("mongoose");
 const passport = require("./passport/setup");
+
+const auth = require("./routes/authRouter");
+require("dotenv").config();
+
 const cookieParser = require("cookie-parser");
 
 const cors = require("cors");
-require("dotenv").config();
 const app = express();
 
 // Setting port varibale  to .env variable , else will default to 5001;
