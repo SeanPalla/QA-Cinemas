@@ -7,7 +7,7 @@
     margin: auto;
     margin-top: 100px;
     margin-bottom: 300px;
-    width: 550px;
+    width: 800px;
     background-color: #535859;
     border-radius: 10px;
 }
@@ -22,8 +22,9 @@
     padding-bottom: 30px;
 }
 
-.container--reg-form {
+.register-form--wrapper {
     display: flex;
+    /* width: 600px; */
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
@@ -31,18 +32,33 @@
     padding-bottom: 200px;
 }
 
+
 .register-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    width: 275px;
+    width: 600px;
     margin: auto;
 }
 
+.reg-form--sub-wrapper {
+    /* need to figure out how to stop the offset */ 
+}
+
+.reg-form--left-side {
+    padding-right:20px;
+}
+
+.reg-form--right-side {
+    padding-left: 0px
+}
+
 .reg-form--input {
+    /* width: 220px; */
     padding: 10px;
-    margin: 10px;
+    margin: 15px 0px;
+    justify-content: space-between;
     border-radius: 10px;
     border: none;
     font-family: sans-serif;
