@@ -1,3 +1,8 @@
+import App from "./Pay";
 export default function Bookings() {
-    return <h1>Bookings</h1>;
+    return (
+        <div>
+            <App />
+        </div>
+    );
 }
