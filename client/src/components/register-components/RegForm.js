@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // import DatePicker from 'react-date-picker';
 import DoB_Picker from './dob_logic';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, OverlayTrigger } from 'react-bootstrap';
 import "react-toastify/dist/ReactToastify.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import renderPWTooltip from './password_tooltip'; 
+import regUser from './registrationLogic';
 
 export default function RegForm() {
-    // const [value, onChange] = React.useState(new Date());
+
+    const [firstName, setFirstName] = useState("");
+    const [surname, setSurname] = useState("");
+    const [dob, setDOB] = useState(new Date("2000-01-01"));
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
 
     return (
         <div className="container--register-form">
@@ -14,11 +22,15 @@ export default function RegForm() {
                 <Form.Control
                     type="text"
                     placeholder="First Name"
-                    className="reg-form--input"
+                    value={firstName}
+                    onChange={(event) => setFirstName(event.target.value)}
+                    className="freg-form--input"
                 />
                 <Form.Control
                     type="text"
                     placeholder="Surname"
+                    value={surname}
+                    onChange={(event) => setSurname(event.target.value)}
                     className="reg-form--input"
                 />
                 {/* <label for="reg-form--birth-date" id="birthdate-label">Date of Birth</label> */}
@@ -26,33 +38,34 @@ export default function RegForm() {
                 <Form.Control
                     type="text"
                     placeholder="Email address"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
                     className="reg-form--input"
                 />
-                <Form.Control
-                    type="text"
-                    placeholder="Confirm Email address"
-                    className="reg-form--input"
-                />
-                <Form.Control 
+                <OverlayTrigger
+                    placement="right"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderPWTooltip}
+                    >
+                    <Form.Control 
                     type="password"
                     placeholder="Password"
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
                     className="reg-form--input"
                     id="reg-form--password-input"
-                />
-                <Form.Control
-                    type="password"
-                    placeholder="Confirm Password"
-                    className="reg-form--input"
-                    id="reg-form--confirm-password"
-                />
+                    />
+                </OverlayTrigger>
                 {/* <i class="bi bi-eye-slash" id="togglePassword"></i> */}
                 <Form.Control
                     type="text"
                     placeholder="Phone Number"
+                    value={phoneNumber}
+                    onChange={(event) => setPhoneNumber(event.target.value)}
                     className="reg-form--input"
                     id="reg-form--phonenumber-input"
                 />
-                <Button className="form control" id="reg-form--button">
+                <Button id="reg-form--button" onClick={regUser}>
                     Register
                 </Button>
             </Form>

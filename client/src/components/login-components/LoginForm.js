@@ -10,7 +10,7 @@ export default function LoginForm() {
                 <Form.Control
                     type="text"
                     placeholder="Email Address"
-                    className="form-control login-form--input"
+                    className="login-form--input"
                 />
                 <Form.Control
                     type="password"
@@ -18,7 +18,7 @@ export default function LoginForm() {
                     className="form-control login-form--input"
                     id="login-form--password"
                 />
-                <Button className="form-control" id="login-form--button">
+                <Button id="login-form--button">
                     Log In
                 </Button>
                 {/* <InputGroup.Text>
