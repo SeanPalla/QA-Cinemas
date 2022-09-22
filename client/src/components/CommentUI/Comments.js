@@ -4,7 +4,7 @@ import Comment from "./Comment";
 import "./comments.css";
 import Axios from "axios";
 
-    const Comments = ({ currentUserId }) => {
+    const Comments = ({ currentUserId =null }) => {
         const [backendComments, setBackendComments] = useState([]);
         const [activeComment, setActiveComment] = useState(null);
 
@@ -23,11 +23,10 @@ import Axios from "axios";
 
         // Use Axion call instead to add user
         const addComment = (text, parentId) => {
-            console.log("Running Add comment")
             const textInfo = text;
             // need to add user_id and username instead of constant
-            const userId = 2;
-            const username = "Robot-I-Tester1"
+            const userId = window.sessionStorage.getItem('id')|| null;
+            const username = window.sessionStorage.getItem('name')|| null;
             Axios.post('http://localhost:5000/api/comments', {userId,textInfo, username,parentId})
             .then((comment) =>{
                 setBackendComments([comment, ...backendComments]);
@@ -75,6 +74,7 @@ import Axios from "axios";
           <div className="comments">
             <h3 className="comments-title">Comments</h3>
             <div className="comment-form-title">Write a comment</div>
+            {/* disable comment form if currentUser = null*/}
             <CommentForm 
                   submitLabel="Write" 
                   handleSubmit={addComment} 

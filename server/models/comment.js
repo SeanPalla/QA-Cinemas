@@ -20,7 +20,8 @@ const commentSchema = new mongoose.Schema({
         default:null
     },
     userId:{
-        type: Number,
+        type:Schema.Types.ObjectId,
+        ref: 'User',
         required: true,
     },
     movieId: {
