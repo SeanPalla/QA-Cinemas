@@ -18,7 +18,7 @@ export default function WatchList() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:3000/api/movies") //CHANGE BACK TO 5000 BEFORE PUSHING
+            .get("http://localhost:5000/api/movies") //CHANGE BACK TO 5000 BEFORE PUSHING
             .then((res) => {
                 console.log(res.data.movies);
                 setMovies(res.data.movies);
@@ -38,7 +38,7 @@ export default function WatchList() {
                     if (relDate <= currentDate) {
                         return (
                             <div className="card-div">
-                                <Card key={item.id} item={item} />
+                                <Card key={item._id} item={item} />
                             </div>
                         );
                     } else {
@@ -54,7 +54,7 @@ export default function WatchList() {
                     if (relDate >= currentDate) {
                         return (
                             <div className="card-div">
-                                <Card key={item.id} item={item} />
+                                <Card key={item._id} item={item} />
                             </div>
                         );
                     } else {
