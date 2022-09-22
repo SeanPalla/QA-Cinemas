@@ -32,10 +32,10 @@ function Payment() {
         <StripeContainer paymentData={paymentData} />
       ) : (
         <>
-          <div1 className="SelectMovieDiv">
+          <div className="SelectMovieDiv">
             <h1 className="SelectMovie">Select Movie</h1>
             <Select className="SelectMovieOption" options={options} />
-          </div1>
+          </div>
           <form className="PaymentForm">
             <h1 className="SelectTickets">Select Tickets</h1>
             <label className="AdultTicket">
