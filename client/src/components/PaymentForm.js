@@ -8,7 +8,7 @@ const CARD_OPTIONS = {
   style: {
     base: {
       iconColor: "#555",
-      color: "#555",
+      color: "#ffffff",
       fontWeight: 500,
       fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
       fontSize: "16px",

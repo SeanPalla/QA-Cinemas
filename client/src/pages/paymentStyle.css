@@ -1,5 +1,5 @@
 .Payment {
-    color: #777;
+    color: white;
     margin-bottom: 12.3rem;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .SelectMovie {
-    color: #777;
+    color: white;
 }
 
 .SelectMovieOption {
@@ -30,22 +30,22 @@
 }
 
 .SelectTicket {
-    color: #777;
+    color: white;
     margin: auto;
 }
 
 .AdultTicket {
-    color: #777;
+    color: white;
     margin: auto;
 }
 
 .ChildTicket {
-    color: #777;
+    color: white;
     margin: auto;
 }
 
 .ConTicket {
-    color: #777;
+    color: white;
     margin: auto;
 }
 
@@ -54,7 +54,7 @@
     border: 3px solid #00ffff;
     border-radius: 4px;
     background-color: #555;
-    color: #777;
+    color: white;
     padding: 5px 10px;
     margin: auto;
 }
@@ -64,7 +64,7 @@
     border: 3px solid #00ffff;
     border-radius: 4px;
     background-color: #555;
-    color: #777;
+    color: white;
     padding: 5px 10px;
     margin: auto;
 }
@@ -74,7 +74,7 @@
     border: 3px solid #00ffff;
     border-radius: 4px;
     background-color: #555;
-    color: #777;
+    color: white;
     padding: 5px 10px;
     margin: auto;
 }
@@ -105,8 +105,12 @@
     margin-top: 3rem;
     border-radius: 12px;
     background-color: #555;
-    color: #777;
+    color: white;
     border: 3px solid #00ffff;
     padding: 2px 6px;
     margin-top: 1rem;
+}
+
+.totalPay {
+    color: white;
 }

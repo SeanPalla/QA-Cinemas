@@ -86,7 +86,7 @@ function Payment() {
               <br />
             </label>
             <br />
-            <p>Total Amount: £{totalAmount / 100}</p>
+            <p className="totalPay">Total Amount: £{totalAmount / 100}</p>
             <button
               className="PurchaceButton"
               type="button"
