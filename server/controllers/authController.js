@@ -1,6 +1,8 @@
+require('../models/db');
 const express = require('express');
 const router = express.Router();
 const AuthUtils = require('../util/authUtils');
+// const User = require('../models/User');
 
 function isJsonData(req, res, next) {
     if (req.headers['content-type'] !== 'application/json') {
@@ -10,9 +12,8 @@ function isJsonData(req, res, next) {
 };
 
 exports.loginRequest = (req, res) => {
-    console.log("Login request reached")
     try{
-        res.status(200).send(` Testing ${req.user.username}`);
+        res.status(200).json(req.user);
     }catch (err){
         console.error(err);
         response.status(400).send('Something went wrong registering the user');

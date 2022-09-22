@@ -18,7 +18,7 @@ export default function WatchList() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:5000/api/movies")
+            .get("http://localhost:5000/api/movies") //CHANGE BACK TO 5000 BEFORE PUSHING
             .then((res) => {
                 console.log(res.data.movies);
                 setMovies(res.data.movies);
