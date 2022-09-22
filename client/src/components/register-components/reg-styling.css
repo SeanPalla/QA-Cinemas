@@ -92,6 +92,10 @@
     letter-spacing: 0.2em;
 }
 
+#reg-form--dob { 
+    font-family: 'Nikkyou Sans', sans-serif;
+}
+
 #reg-form--phonenumber-input {
     font-family: 'Nikkyou Sans', sans-serif;
 }
