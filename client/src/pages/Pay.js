@@ -12,6 +12,12 @@ function Payment() {
     kticket: 0,
   });
 
+  const { aticket, cticket, kticket } = paymentData;
+  const aAmount = aticket * 10;
+  const cAmount = cticket * 5;
+  const kAmount = kticket * 7;
+  const totalAmount = (aAmount + cAmount + kAmount) * 100;
+
   const handleTicketData = (e) => {
     if (e.target.value < 0) {
       alert("Invalid Input, please enter value greater than 0.");
@@ -39,7 +45,7 @@ function Payment() {
           <form className="PaymentForm">
             <h1 className="SelectTickets">Select Tickets</h1>
             <label className="AdultTicket">
-              Adult Tickets:
+              Adult Tickets: £10 Each
               <br />
               <input
                 className="AdultInput"
@@ -53,7 +59,7 @@ function Payment() {
             </label>
             <br />
             <label className="ChildTicket">
-              Child Tickets:
+              Child Tickets: £5 Each
               <br />
               <input
                 className="ChildInput"
@@ -67,7 +73,7 @@ function Payment() {
             </label>
             <br />
             <label className="ConTicket">
-              Concessionary Tickets:
+              Concessionary Tickets: £7 Each
               <br />
               <input
                 className="ConInput"
@@ -80,6 +86,7 @@ function Payment() {
               <br />
             </label>
             <br />
+            <p>Total Amount: {totalAmount}</p>
             <button
               className="PurchaceButton"
               type="button"
