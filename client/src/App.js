@@ -9,6 +9,7 @@ import Nearby from "./pages/Nearby";
 import DiscussionBoard from "./pages/DiscussionBoard";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Admin from "./pages/Admin";
@@ -29,55 +30,65 @@ import { Route, Routes } from "react-router-dom";
 import Screens from "./pages/Screens";
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Navbar />;
-      <div className="homeContainer">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Profile" element={<Profile />} />
-          <Route path="/Admin" element={<Admin />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Register" element={<Register />} />
-          <Route path="/Pay" element={<Payment />} />
-          <Route path="/Classifications" element={<Classifications />} />
-          <Route path="/OpeningTimes" element={<OpeningTimes />} />
-          <Route path="/Screens" element={<Screens />} />
-          <Route path="/Location" element={<Location />} />
-          <Route path="/Nearby" element={<Nearby />} />
-          <Route path="/DiscussionBoard" element={<DiscussionBoard />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/Deadpool" element={<Deadpool />} />
-          <Route path="/Black-Adam" element={<BlackAdam />} />
-          <Route path="/Jaws" element={<Jaws />} />
-          <Route
-            path="/How-To-Train-Your-Dragon"
-            element={<HowToTrainYourDragon />}
-          />
-          <Route
-            path="/The-Shawshank-Redemption"
-            element={<ShawshankRedemption />}
-          />
-          <Route path="/Ticket-To-Paradise" element={<TicketToParadise />} />
-          <Route
-            path="/The-Greatest-Beer-Run-Ever"
-            element={<GreatestBeerRunEver />}
-          />
-          <Route
-            path="/Avatar-The-Way-Of-Water"
-            element={<AvatarTheWayOfTheWater />}
-          />
-          <Route
-            path="/Guardians-Of-The-Galaxy"
-            element={<GuardiansOfTheGalaxyVol3 />}
-          />
-        </Routes>
-        <Footer />
-      </div>
-    </>
-  );
+    return (
+        <>
+            <Header />
+            <Navbar />;
+            <div className="homeContainer">
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/Profile" element={<Profile />} />
+                    <Route path="/Admin" element={<Admin />} />
+                    <Route path="/Login" element={<Login />} />
+                    <Route path="/Logout" element={<Logout />} />
+                    <Route path="/Register" element={<Register />} />
+                    <Route path="/Pay" element={<Payment />} />
+                    <Route
+                        path="/Classifications"
+                        element={<Classifications />}
+                    />
+                    <Route path="/OpeningTimes" element={<OpeningTimes />} />
+                    <Route path="/Screens" element={<Screens />} />
+                    <Route path="/Location" element={<Location />} />
+                    <Route path="/Nearby" element={<Nearby />} />
+                    <Route
+                        path="/DiscussionBoard"
+                        element={<DiscussionBoard />}
+                    />
+                    <Route path="/AboutUs" element={<AboutUs />} />
+                    <Route path="/Contact" element={<Contact />} />
+                    <Route path="/Deadpool" element={<Deadpool />} />
+                    <Route path="/Black-Adam" element={<BlackAdam />} />
+                    <Route path="/Jaws" element={<Jaws />} />
+                    <Route
+                        path="/How-To-Train-Your-Dragon"
+                        element={<HowToTrainYourDragon />}
+                    />
+                    <Route
+                        path="/The-Shawshank-Redemption"
+                        element={<ShawshankRedemption />}
+                    />
+                    <Route
+                        path="/Ticket-To-Paradise"
+                        element={<TicketToParadise />}
+                    />
+                    <Route
+                        path="/The-Greatest-Beer-Run-Ever"
+                        element={<GreatestBeerRunEver />}
+                    />
+                    <Route
+                        path="/Avatar-The-Way-Of-Water"
+                        element={<AvatarTheWayOfTheWater />}
+                    />
+                    <Route
+                        path="/Guardians-Of-The-Galaxy"
+                        element={<GuardiansOfTheGalaxyVol3 />}
+                    />
+                </Routes>
+                <Footer />
+            </div>
+        </>
+    );
 }
 
 export default App;

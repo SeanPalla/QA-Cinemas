@@ -1,61 +1,57 @@
 .Payment {
     color: #777;
+    margin-bottom: 12.3rem;
 }
 
-.PaymentForm{
+.PaymentForm {
     margin-left: 25%;
     margin-top: 4rem;
     margin-bottom: 4rem;
     border-radius: 25px;
-    border: 2px solid #00FFFF;
+    border: 2px solid #00ffff;
     padding: 20px;
     width: 50%;
     height: 350px;
 }
 
-.SelectMovieDiv{
-    
-
+.SelectMovieDiv {
 }
 
-.SelectMovie{
-    color: #777; 
-
+.SelectMovie {
+    color: #777;
 }
 
-.SelectMovieOption{
+.SelectMovieOption {
     align-items: center;
     width: 20rem;
     margin: auto;
-    border: 3px solid #00FFFF;
+    border: 3px solid #00ffff;
     border-radius: 7px;
 }
-    
 
-.SelectTicket{
-    color: #777; 
+.SelectTicket {
+    color: #777;
     margin: auto;
 }
 
-.AdultTicket{
-    color: #777; 
+.AdultTicket {
+    color: #777;
     margin: auto;
 }
 
-.ChildTicket{
-    color: #777;  
-    margin: auto;  
-}
-
-.ConTicket{
-    color: #777; 
+.ChildTicket {
+    color: #777;
     margin: auto;
 }
 
+.ConTicket {
+    color: #777;
+    margin: auto;
+}
 
-.AdultInput{
+.AdultInput {
     width: 20rem;
-    border: 3px solid #00FFFF;
+    border: 3px solid #00ffff;
     border-radius: 4px;
     background-color: #555;
     color: #777;
@@ -63,19 +59,19 @@
     margin: auto;
 }
 
-.ChildInput{
+.ChildInput {
     width: 20rem;
-    border: 3px solid #00FFFF;
-    border-radius: 4px; 
+    border: 3px solid #00ffff;
+    border-radius: 4px;
     background-color: #555;
     color: #777;
     padding: 5px 10px;
     margin: auto;
 }
 
-.ConInput{
-    width: 20rem; 
-    border: 3px solid #00FFFF;
+.ConInput {
+    width: 20rem;
+    border: 3px solid #00ffff;
     border-radius: 4px;
     background-color: #555;
     color: #777;
@@ -87,8 +83,8 @@
     background-color: #999;
 }
 
-.PayForm{
-    border: 3px solid #00FFFF;
+.PayForm {
+    border: 3px solid #00ffff;
     padding: 1rem;
     border-radius: 12px;
     margin-bottom: 10rem;
@@ -97,20 +93,20 @@
     margin: auto;
 }
 
-.FormRow{
+.FormRow {
     padding: 1rem;
-    border: 3px solid #00FFFF;
+    border: 3px solid #00ffff;
     margin: auto;
     width: 500px;
     border-radius: 12px;
 }
 
-.PurchaceButton{
+.PurchaceButton {
     margin-top: 3rem;
     border-radius: 12px;
     background-color: #555;
     color: #777;
-    border: 3px solid #00FFFF;
+    border: 3px solid #00ffff;
     padding: 2px 6px;
     margin-top: 1rem;
 }
