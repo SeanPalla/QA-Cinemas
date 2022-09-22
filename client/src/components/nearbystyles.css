@@ -1,91 +1,39 @@
 .nearby-heading {
-    font-size: xxx-large;
-    font-family: 'Nikkyou Sans', sans-serif;
-    color: white; 
-    position: relative;
-    text-align: center;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto;  
-    letter-spacing: 1px;
-    text-shadow: 4px 4px 0 #8900ff;
+color: #00FFFF;
 }
 
 .nearby-subHeading {
-    font-size: x-large;
-    font-family: 'Nikkyou Sans', sans-serif;
-    color: white; 
-    text-align: center;
-    position: absolute;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 0 #ff0677;
-
+    color: #00FFFF;
+    margin-top: 3rem;
 } 
 
+.nearby-object {
+    border-radius: 25px;
+    border: 2px solid #00FFFF;
+    width: 100%;
+    height: 350px;
+    margin-top: 2rem;
+}
+
 .nearby-title {
-    font-size: large;
-    font-family: 'Nikkyou Sans', sans-serif;
-    color: white;
-    text-align: center;
-    position: absolute;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
-    margin-top: -7rem;
-    align-self: center;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 0 #ff0677;
+    color: #00FFFF;
+    margin-top: 1rem;
 }
 
 .nearby-image {
-    align-items: left;
-    width: 15rem;
-    height: 10rem;
-    float: left;
-    position: relative;
-    top: -4rem;
-    left: -4.5rem;
+   width: 12rem;
+   height: 9rem;
+   border-radius: 10%;
+   margin-bottom: 1rem;
 }
 
 .nearby-desc {
-    font-family: 'Nikkyou Sans', sans-serif;
-    color: white;
-    width: 1500px;
-    position: relative;
-    text-align: left;
-    left: 12rem;
-    margin-top: -1rem;
-    letter-spacing: 1px;
-    text-shadow: -1px -1px 0 #0051ff;
-    
+    color: #777;
+    margin: auto;
+    margin-bottom: 1rem;
 }
 
 .nearby-info {
-    font-family: 'Nikkyou Sans', sans-serif;
-    color: white;  
-    float: right;
-    margin-top: 2rem;
-    margin-left: -1rem;
-    text-align: left;
-    text-shadow: -1px -1px 0 #0051ff;
+    color: #00FFFF;
+    margin-bottom: 1rem;
 }
-
-body { background-color: #333;}
-
-.nearby-object {
-    background-color: #555;
-    padding: 6rem;
-    margin-bottom: 4rem;
-    margin-top: 8rem;
-    position: relative;
-    border: 3px solid #00B8FF;
-    color: #b000ff ,#fd00ff ,#00B8FF , #8900ff ,#ff0677 ,#0051ff;
-    
-}
-
