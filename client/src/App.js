@@ -42,7 +42,7 @@ function App() {
                     <Route path="/Login" element={<Login />} />
                     <Route path="/Logout" element={<Logout />} />
                     <Route path="/Register" element={<Register />} />
-                    <Route path="/Bookings" element={<Bookings />} />
+                    <Route path="/Pay" element={<Payment />} />
                     <Route
                         path="/Classifications"
                         element={<Classifications />}
