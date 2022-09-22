@@ -1,0 +1,25 @@
+.movieTitle {
+    color: #00c2cb;
+}
+.dateRatingLength{
+    color: white;
+}
+.genre {
+    color: #00c2cb;
+}
+.movieImage {
+    height: 500px;
+
+}
+.movieTrailer {
+
+}
+.Director {
+    color: white;
+}
+.Actors {
+    color: #00c2cb;
+}
+.movieDesc {
+    color: white;
+}
