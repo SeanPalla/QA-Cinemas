@@ -1,19 +1,32 @@
 export default function TicketToParadise() {
-  return (
-    <div>
-      <h1 className="movieTitle">Ticket To Paradise</h1>
-      <h2 className="dateRatingLength"> </h2>
-      <img className="movieImage" src="" alt="" />
-      <iframe
-        className="movieTrailer"
-        title="ticketstoparadise"
-        width="420"
-        height="315"
-        scr="link"></iframe>
-      <p className="Director">fsddddd</p>
-      <p className="Actors"></p>
-      <p className="Desc"></p>
-      <p className="rating"></p>
-    </div>
-  );
+    return (
+        <div>
+            <h1 className="movieTitle">Ticket To Paradise</h1>
+            <h2 className="dateRatingLength">2022 - PG-13 - 1h 44m</h2>
+            <h3 className="genre"> Comedy - Romance</h3>
+            <img
+                className="movieImage"
+                src="static/images/Ticket To Paradise.png"
+                alt=""
+            />
+            <iframe
+                className="movieTrailer"
+                title="ticketstoparadise"
+                width="420"
+                height="315"
+                scr="link"
+            ></iframe>
+            <p className="Director">Director: Ol Parker</p>
+            <p className="Actors">
+                Actors: George Clooney, Sean Lynch, Julia Roberts, Arielle
+                Carver-O'Neill
+            </p>
+            <p className="movieDesc">
+                A divorced couple that teams up and travels to Bali to stop
+                their daughter from making the same mistake they think they made
+                25 years ago.
+            </p>
+            <p className="rating"></p>
+        </div>
+    );
 }

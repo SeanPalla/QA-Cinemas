@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Classifications from "./pages/Classifications";
-import Bookings from "./pages/Bookings";
+import Payment from "./pages/Pay";
 import OpeningTimes from "./pages/OpeningTimes";
 import Location from "./pages/Location";
 import Nearby from "./pages/Nearby";
