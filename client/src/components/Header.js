@@ -14,12 +14,6 @@ export default function Header() {
     let isLoggedIn = (window.sessionStorage.getItem('id')) ? true : false;
 
 
-    console.log("User logged in: ",window.sessionStorage.getItem('id'));
-    console.log("isLoggedIn =", isLoggedIn);
-    // const Logout = () =>{
-    //     window.sessionStorage.clear();
-    // };
-
     return (
         <header className="header">
             <Link to="/" className="Home">
