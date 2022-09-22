@@ -34,7 +34,7 @@ This will clone QA-Cinemas into your local directory. Move into the QA-Cinemas f
 3. The dependencies of the application would be installed.
 4. npm start.
 
-# Starting Server/Backend (Express.js )
+# Starting Client/Frontend (Express.js )
 1. Move into src/client.
 2. npm i. (N.B. Please note you need to have Node.js installed on your pc to perform this action).
 3. The dependencies of the application would be installed.
