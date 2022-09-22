@@ -1,3 +1,5 @@
+import "../movieStyle.css";
+
 export default function AvatarTheWayOfTheWater() {
   return (
     <div>
