@@ -1,64 +1,52 @@
 import React, { useState } from "react";
 import Axios from "axios";
-import { Form, Button } from 'react-bootstrap';
-import "react-toastify/dist/ReactToastify.min.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 export default function LoginForm() {
-    const[checkUserInfo, setUserInfo] = useState({username: null, 
-                                                  password:null});
-
-    // Axios call to verify a user 
+    const [checkUserInfo, setUserInfo] = useState({
+        username: null,
+        password: null,
+    });
+    // Axios call to verify a user
     // add a user not identified alert
-    const loginUser = () =>{
-        Axios.post('http://localhost:5000/api/login/', {username:checkUserInfo.username, password:checkUserInfo.password})
-        .then(res => {
+    const loginUser = () => {
+        Axios.post("http://localhost:5000/api/login/", {
+            username: checkUserInfo.username,
+            password: checkUserInfo.password,
+        }).then((res) => {
             console.log(res.data._id);
-            window.sessionStorage.setItem('id', res.data._id);
-            window.sessionStorage.setItem('name', res.data.username);
-        })
+            window.sessionStorage.setItem("id", res.data._id);
+            window.sessionStorage.setItem("name", res.data.username);
+        });
     };
-
     const onSubmit = (event) => {
         console.log("clciked");
         event.preventDefault();
         //console.log(event.target.name);
         //console.log(event.target.password.value);
-        setUserInfo({username: event.target.username.value,
-                     password: event.target.password.value
-                    });
+        setUserInfo({
+            username: event.target.username.value,
+            password: event.target.password.value,
+        });
         loginUser();
     };
-
     return (
         <div className="container--login-form">
             <form className="login-form" onSubmit={onSubmit}>
                 <input
-
                     type="text"
                     placeholder="Username"
                     name="username"
                     className="login-form--input"
                 />
-                <Form.Control
-                    type="password"
+                <input
+                    type="text"
                     placeholder="Password"
                     name="password"
                     className="login-form--input"
                 />
                 <button className="login-form--button" type="submit">
-
                     Log In
-                </Button>
-                {/* <InputGroup.Text>
-                    <i onClick={clickHandler} class={showPass ? 'fas fa-eye-slash' : 'fas fa-eye'}></i>
-                </InputGroup.Text> */} 
-                <p className="login-page--no-account">
-                    Don't have an account?
-                    <br/>
-                    <a className="login-page--signup-link" href="/Register">Sign up here</a>
-                </p>
-            </Form>
+                </button>
+            </form>
         </div>
     );
 }
