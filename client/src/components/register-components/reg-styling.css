@@ -42,6 +42,10 @@
     margin: auto;
 }
 
+.reg-form--error {
+    color: #fa9e8b ;
+}
+
 .reg-form--left-side {
     padding-right:20px;
 }
@@ -97,6 +101,10 @@
 }
 
 #reg-form--phonenumber-input {
+    font-family: 'Nikkyou Sans', sans-serif;
+}
+
+#reg-form--postcode {
     font-family: 'Nikkyou Sans', sans-serif;
 }
 

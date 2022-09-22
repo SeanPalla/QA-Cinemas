@@ -7,27 +7,27 @@ YupPassword(yup);
 
 const passConditions =  yup.string().required()
                                     .min(10,
-                                    'Password must contain 10 or more characters with at least one of each: uppercase, lowercase, number and special character'
+                                    'Password is too short'
                                     )
                                     .minLowercase(1, 'Password must contain at least 1 lower case letter')
                                     .minUppercase(1, 'Password must contain at least 1 upper case letter')
                                     .minNumbers(1, 'Password must contain at least 1 number')
                                     .minSymbols(1, 'Password must contain at least 1 special character');
 
-const phoneConditions = yup.string().required()
+const phoneConditions = yup.string().required('Phone Number required')
                                     .min(11, 'Phone number can be no shorter or longer than 11 characters')
                                     .max(11, 'Phone number can be no shorter or longer than 11 characters');
 
 const regFormSchema = yup.object().shape({
-    fullName: yup.string().required(),
-    username: yup.string().required(),
-    email: yup.string().email().required(),
+    fullName: yup.string().required('Your name is required'),
+    username: yup.string().required('Username is required'),
+    email: yup.string().email('Email should be formatted x@y.z').required('Email is required'),
     password: passConditions,
-    dob: yup.string().required().matches(/^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$/),
-    addLine1: yup.string().required(),
+    dob: yup.string().required('Date of Birth is required').matches(/^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$/, 'Incorrect date format'),
+    addLine1: yup.string().required('First Address Line is required'),
     addLine2: yup.string(),
-    city: yup.string().required(),
-    postcode: yup.string().required().matches(/^(([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))\s?[0-9][A-Za-z]{2}))$/),
+    city: yup.string().required('City is required'),
+    postcode: yup.string().required().matches(/^(([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))\s?[0-9][A-Za-z]{2}))$/, 'Postcode invalid'),
     phone: phoneConditions,
     terms: yup.bool().required().oneOf([true], 'Terms and Conditions must be accepted to register an account.')
 });
@@ -44,6 +44,10 @@ const firstValues = {
     postcode: "",
     phone: "",
     terms: false
+}
+
+function onSubmit(values) {
+    console.log("poo");
 }
 
 function regUser(name, username, dob, email, phone, addLine1, addLine2, city, postcode) {
@@ -65,4 +69,4 @@ function regUser(name, username, dob, email, phone, addLine1, addLine2, city, po
 
 }
 
-export { regUser, regFormSchema, firstValues };
+export { regUser, regFormSchema, firstValues, onSubmit};
