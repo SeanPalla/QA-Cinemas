@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import { Form, Button } from 'react-bootstrap';
+import "react-toastify/dist/ReactToastify.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function LoginForm() {
     const[checkUserInfo, setUserInfo] = useState({username: null, 
@@ -31,21 +34,31 @@ export default function LoginForm() {
         <div className="container--login-form">
             <form className="login-form" onSubmit={onSubmit}>
                 <input
+
                     type="text"
                     placeholder="Username"
                     name="username"
                     className="login-form--input"
                 />
-                <input 
-                    type="text"
+                <Form.Control
+                    type="password"
                     placeholder="Password"
                     name="password"
                     className="login-form--input"
                 />
                 <button className="login-form--button" type="submit">
+
                     Log In
-                </button>
-            </form>
+                </Button>
+                {/* <InputGroup.Text>
+                    <i onClick={clickHandler} class={showPass ? 'fas fa-eye-slash' : 'fas fa-eye'}></i>
+                </InputGroup.Text> */} 
+                <p className="login-page--no-account">
+                    Don't have an account?
+                    <br/>
+                    <a className="login-page--signup-link" href="/Register">Sign up here</a>
+                </p>
+            </Form>
         </div>
     );
 }
