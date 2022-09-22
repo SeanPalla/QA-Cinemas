@@ -33,7 +33,7 @@ export default function Header() {
             {(isLoggedIn) && 
                 <ul>
                     <CustomLink to="/Profile">Profile</CustomLink>
-                    <CustomLink to="/">Logout</CustomLink>
+                    <CustomLink to="/Logout">Logout</CustomLink>
                 </ul>
             }
             {(!isLoggedIn) && 

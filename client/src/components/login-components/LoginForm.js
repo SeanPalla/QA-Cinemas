@@ -7,37 +7,27 @@ export default function LoginForm() {
 
     // Axios call to verify a user 
     // add a user not identified alert
-    const loginUser = (usernameLog,passwordLog) =>{
-        try{
-            console.log("running authenicate api");
-            Axios.post('http://localhost:5000/api/login/', {username:usernameLog, password:passwordLog})
-            .then(res => {
-                console.log(res);
-                window.sessionStorage.setItem('id', res.data._id);
-                window.sessionStorage.setItem('name', usernameLog);
-            })
-        }
-        catch (err){
-            console.log(err);
-        }
-    }
+    const loginUser = () =>{
+        Axios.post('http://localhost:5000/api/login/', {username:checkUserInfo.username, password:checkUserInfo.password})
+        .then(res => {
+            window.sessionStorage.setItem('id', res.data._id);
+            window.sessionStorage.setItem('name', res.data.username);
+            window.location.reload();
+        })
+    };
 
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log("clicked login button");
-        console.log(event.target.username.value);
-        console.log(event.target.password.value);
-        const usernameLog = event.target.name.value;
-        const passwordLog = event.target.password.value;
-        setUserInfo({username: usernameLog,
-                     password: passwordLog
+        window.sessionStorage.setItem('name', event.target.password.value);
+        setUserInfo({username: event.target.username.value,
+                     password: event.target.password.value
                     });
-        loginUser(usernameLog,passwordLog);
+        loginUser();
     };
 
     return (
         <div className="container--login-form">
-            <form className="login-form" onSubmit={onSubmit} action="/">
+            <form className="login-form" action="/" onSubmit={onSubmit}>
                 <input
                     type="text"
                     placeholder="Username"
