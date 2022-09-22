@@ -1,25 +1,65 @@
-.movieTitle {
-    color: #00c2cb;
+.movieObject{
+    background-color: #444;
+    border: 2px solid #00FFFF;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    width: 75%;
+    margin-left: 12.5%;
+    margin-bottom: 4%;
 }
+
+.movieTitle {
+color: #00FFFF;
+margin-top: 2rem;
+
+}
+
 .dateRatingLength{
     color: white;
+    
+
 }
+
 .genre {
-    color: #00c2cb;
+    color: #00FFFF;
+
 }
+
 .movieImage {
-    height: 500px;
-
+    margin-left: 27.5%;
+    height: 310px;
+    width: 15%;
+    object-fit: fill;
+    float: left;
 }
-.movieTrailer {
 
+.movieTrailer {  
+    float: left;
+    max-width: 100%;
+    height: 310px;
+    width: 30%;
 }
+
 .Director {
-    color: white;
+ margin-top: 22rem;
+  color: white;
+  font-size: smaller;
 }
+
 .Actors {
-    color: #00c2cb;
-}
-.movieDesc {
     color: white;
+    font-size: smaller;
+    
+}
+
+.movieDesc {
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.imageandmovie {
+
+}
+.infobox {
+    margin-top: 10rem;
 }
