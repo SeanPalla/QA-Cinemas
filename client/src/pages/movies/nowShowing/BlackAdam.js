@@ -2,17 +2,28 @@ export default function BlackAdam() {
   return (
     <div>
       <h1 className="movieTitle">Black Adam</h1>
-      <h2 className="dateRatingLength"> kjdsnfkjn</h2>
-      <img className="movieImage" src="" alt="" />
+      <h2 className="dateRatingLength"> 2022 . PG-13 . 2h 4m</h2>
+      <h3 className="Genre">Action, Fantasy, Sci-Fi</h3>
+      <img className="movieImage" src="static/images/Black_Adam.png" alt="" />
       <iframe
         className="movieTrailer"
-        title="BlackAdam"
-        width="420"
+        width="560"
         height="315"
-        scr="link"></iframe>
-      <p className="Director">fsddddd</p>
-      <p className="Actors"></p>
-      <p className="Desc"></p>
+        src="https://www.youtube.com/embed/X0tOpBuYasI"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <p className="Director">Director: Jaume Collet-Serra</p>
+      <p className="Actors">
+        Actors: Viola Davis, Dwayne Johnson, Sarah Shahi{" "}
+      </p>
+      <p className="Desc">
+        Nearly 5,000 years after he was bestowed with the almighty powers of the
+        Egyptian gods-and imprisoned just as quickly-Black Adam (Johnson) is
+        freed from his earthly tomb, ready to unleash his unique form of justice
+        on the modern world.
+      </p>
       <p className="rating"></p>
     </div>
   );
