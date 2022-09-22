@@ -38,7 +38,7 @@ export default function WatchList() {
                     if (relDate <= currentDate) {
                         return (
                             <div className="card-div">
-                                <Card key={item.id} item={item} />
+                                <Card key={item._id} item={item} />
                             </div>
                         );
                     } else {
@@ -54,7 +54,7 @@ export default function WatchList() {
                     if (relDate >= currentDate) {
                         return (
                             <div className="card-div">
-                                <Card key={item.id} item={item} />
+                                <Card key={item._id} item={item} />
                             </div>
                         );
                     } else {

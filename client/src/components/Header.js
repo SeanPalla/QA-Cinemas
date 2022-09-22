@@ -10,6 +10,16 @@ export default function Header() {
             setListOfMovies(res.data.movies);
         });
     }, []);
+
+    let isLoggedIn = (window.sessionStorage.getItem('id')) ? true : false;
+
+
+    console.log("User logged in: ",window.sessionStorage.getItem('id'));
+    console.log("isLoggedIn =", isLoggedIn);
+    // const Logout = () =>{
+    //     window.sessionStorage.clear();
+    // };
+
     return (
         <header className="header">
             <Link to="/" className="Home">
@@ -19,12 +29,20 @@ export default function Header() {
                     className="Logo"
                 ></img>
             </Link>
-            <ul>
-                {/* <CustomLink to="/Admin">Admin</CustomLink> */}
-                <CustomLink to="/Profile">Profile</CustomLink>
-                <CustomLink to="/Login">Login</CustomLink>
-                <CustomLink to="/Register">Register</CustomLink>
-            </ul>
+
+            {(isLoggedIn) && 
+                <ul>
+                    <CustomLink to="/Profile">Profile</CustomLink>
+                    <CustomLink to="/Logout">Logout</CustomLink>
+                </ul>
+            }
+            {(!isLoggedIn) && 
+                <ul>
+                    <CustomLink to="/Login">Login</CustomLink>
+                    <CustomLink to="/Register">Register</CustomLink>
+                </ul>
+            }
+            
             <SearchBar placeholder="Enter a Movie title" data={listOfMovies} />
         </header>
     );
@@ -41,3 +59,4 @@ function CustomLink({ to, children, ...props }) {
         </li>
     );
 }
+
