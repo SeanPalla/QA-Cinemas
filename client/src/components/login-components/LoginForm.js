@@ -6,19 +6,24 @@ export default function LoginForm() {
 
     const handleUser = (e) =>{
         const inputUser = e.target.value;
-        window.sessionStorage.setItem('name', inputUser);
-        setUsername({[e.target.username]: inputUser});
+        setUsername({username: inputUser});
     };
 
     // Axios call to verify a user 
     // add a user not identified alert
-    const loginUser = (event) =>{
-        event.PreventDefault();
-        console.log(checkUsername.username);
-        Axios.post('http://localhost:5000/api/login/', {username:checkUsername.username})
-        .then(res => {
-            window.sessionStorage.setItem('id', res.data._id);
-            window.sessionStorage.setItem('name', res.data.username);
+    const loginUser = async () =>{
+        await Axios.post('http://localhost:5000/api/login/', {username: checkUsername.username})
+        .then(user => {
+            if (user){
+                window.sessionStorage.setItem('id', user.data._id);
+                window.sessionStorage.setItem('name', user.data.username);
+                window.location.reload();
+            }else{
+                window.sessionStorage.clear();
+            }
+                
+        }).catch((err) =>{
+            console.log(err);
         })
     };
 
@@ -38,7 +43,7 @@ export default function LoginForm() {
                     name="password"
                     className="login-form--input"
                 />
-                <button className="login-form--button" onClick = {loginUser}>
+                <button type="button" className="login-form--button" onClick = {loginUser}>
                     Log In
                 </button>
             </form>
