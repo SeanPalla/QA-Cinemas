@@ -67,7 +67,7 @@ Running Test are located in the src/client/test folder
 
 * **Sean Palla**  - Githut ->([https://github.com/SeanPalla]
 * **Nikesh Bhudia** - *Add work* - 
-* **Stanislav Angelov** - *Add work* - 
+* **Stanislav Angelov** - GitHub ->([https://github.com/sisath]
 * **Christian Jardine** - Githut ->([https://github.com/ChrisSJard](https://github.com/ChrisSJard)) 
 * **Dejan Mac** - *Add work* -  
 ## License
