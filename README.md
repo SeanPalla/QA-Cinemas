@@ -30,6 +30,7 @@ This will clone QA-Cinemas into your local directory. Move into the QA-Cinemas f
 
 ## User Login Information
 To log in to the Qa-Cinema please use the following username and password:
+
 username: qaUser
 password: "Newb32434ot233132%"
 
