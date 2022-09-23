@@ -65,11 +65,11 @@ Running Test are located in the src/client/test folder
 
 ## Authors
 
-* **Sean Palla** - *Add work* - [christophperrins](https://github.com/addyourGit)
-* **Nikesh Bhudia** - *Add work* - [christophperrins](https://github.com/addyourGit)
-* **Stanislav Angelov** - *Add work* - [christophperrins](https://github.com/addyourGit) 
+* **Sean Palla** - *Add work* - - Githut ->([https://github.com/SeanPalla]
+* **Nikesh Bhudia** - *Add work* - 
+* **Stanislav Angelov** - *Add work* - 
 * **Christian Jardine** - *Work Perfomred: (Build the Comment backend handler{Controller, Model Schema, Routes}, Passport and Schema handling and login Authenication, Build the Comment Component, Watchlist Component and Login User to allow user data to be used during the session)* - Githut ->([https://github.com/ChrisSJard](https://github.com/ChrisSJard)) 
-* **Dejan Mac** - *Add work* - [christophperrins](https://github.com/addyourGit) 
+* **Dejan Mac** - *Add work* -  
 ## License
 
 This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md) file for details 
