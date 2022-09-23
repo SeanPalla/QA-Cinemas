@@ -87,7 +87,7 @@ export default function RegForm() {
                                 {/* <i class="bi bi-eye-slash" id="togglePassword"></i> */}
                                 <Form.Control
                                     type="text"
-                                    placeholder="Date of Birth (DD-MM-YYYY)"
+                                    placeholder="Date of Birth (YYYY-MM-DD)"
                                     name="dob"
                                     value={values.dob}
                                     onChange={handleChange}
