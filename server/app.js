@@ -12,7 +12,7 @@ const cors = require("cors");
 const app = express();
 
 // Setting port varibale  to .env variable , else will default to 5001;
-const port = 5001 //process.env.PORT || 5001;
+const port = process.env.PORT || 5001;
 
 // Generate a Session config
 app.use(

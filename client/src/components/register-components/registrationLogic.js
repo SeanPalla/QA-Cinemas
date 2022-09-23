@@ -9,7 +9,7 @@ YupPassword(yup);
 
 // const [disabled, setDisabled] = useState(false);
 
-const backendPort = 5001 //process.env.PORT || 5001;
+const backendPort = process.env.PORT || 5001;
 
 const toastifySuccess = () => {
     toast("Signed up!", {
@@ -81,27 +81,30 @@ const firstValues = {
     terms: false
 }
 
-function regUser(name, username, dob, email, phone, houseNameNum, addLine1, addLine2, city, postcode) {
+async function regUser(name, usrname, dob, e_mail, phone, houseNameNum, addLine1, addLine2, cityy, postCode) {
 
-    Axios.post(`http://localhost/${backendPort}/api/register`, {
-        name,
-        dob,
-        email,
-        username,
-        phone,
+    await Axios.post(`http://localhost/${backendPort}/api/register`, {
+        fullName: name,
+        username: usrname,
+        email: e_mail,
+        dateOfBirth: dob,
+        phoneNumber: phone,
         role: "MEMBER",
         address: {
-          houseNameNum,
-          addLine1,
-          addLine2,
-          city,
-          postcode,
+          buildingNameOrNumber: houseNameNum,
+          streetName: addLine1,
+          addressLine2: addLine2,
+          city: cityy,
+          postcode: postCode,
         }
     }).then(res => {
         if (res.status === 200) toastifySuccess();
         else toastifyFailure(`${res.status}: ${res.statusText}`)
       })
-      .catch(err => toastifyFailure(err));
+      .catch(err => {
+        toastifyFailure(err);
+        console.log(err) 
+      });
 
 }
 
