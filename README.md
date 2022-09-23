@@ -49,9 +49,15 @@ password: "Newb32434ot233132%"
 
 ### Prerequisites
 
-* An IDE capable of running node commands 
-* Node
-* MongoDB  
+* Visual Studio Code
+* Version Control - Git
+* Source Code Management - GitHub
+* Project Management and Development - Jira Kanban Board
+* Full-Stack Development Technologies:
+* Database Management System - Mongo
+* Back-End Programming Language - Node
+* API Development Platform - Express
+* Front-End Development Framework - React
 
 ### Dependencies
 All dependencies can be view in the package.json & package-lock.json.
