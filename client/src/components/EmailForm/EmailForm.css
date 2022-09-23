@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --light: #d0d1d3;
+  --green: #0df5e2;
+}
+
+.body-email-form {
+  font-family: Poppins;
+  background: var(--dark);
+  line-height: 26px;
+  margin: 0;
+}
+
+.h1-colour-is-neon-green {
+  color: var(--green);
+}
+
+.h4-colour-is-almost-white {
+  color: var(--light);
+}
+
+.h6-colour-is-almost-white-too {
+  color: var(--light);
+  text-align:center; 
+  vertical-align: middle;
+}
+
+.p-colour-is-almost-white-as-well {
+  font-size: 0.8rem;
+  color: var(--light);
+  text-align:center; 
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.App-email-from {
+  height: 75vh;
+  margin-top: 15vh;
+}
+
+.form-email-form {
+  margin-top: 20px;
+  background: var(--dark);
+}
+
+.formRow {
+  margin: 10px 0 20px 0;
+}
+
+.formInput {
+  padding: 15px 10px;
+  background-color: var(--dark);
+  box-shadow: 0 0 0 2px var(--green);
+  border: none;
+  color: var(--green);
+}
+
+.formInput:focus {
+  background-color: var(--dark);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--green);
+  color: var(--light);
+}
+
+.formInput::placeholder {
+  color: var(--green);
+  opacity: 1;
+}
+
+.formInput:focus::placeholder {
+  color: var(--light);
+  opacity: 1;
+}
+
+.errorMessage {
+  color: #f45532;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+#notifyToast {
+  color: rgb(14, 13, 13);
+  border-radius: 6px;
+  width: 200px;
+  margin-left: 75px;
+  background-color: var(--green);
+}
+
+.submit-btn-contact {
+  background-color: var(--dark);
+  color: var(--green) !important;
+  padding: 15px 50px;
+  border: 2px solid var(--green);
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.submit-btn:hover {
+  background-color: var(--green);
+  color: var(--dark) !important;
+  border: 2px solid var(--green);
+}
+
+.submit-btn:disabled:hover {
+  background-color: var(--dark);
+  color: var(--green) !important;
+  cursor: wait;
+}
+
+@media (max-width: 768px) {
+  .submit-message {
+    width: 125px;
+    margin-left: 200px;
+  }
+}

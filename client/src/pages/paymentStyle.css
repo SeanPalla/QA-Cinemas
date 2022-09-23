@@ -1,0 +1,116 @@
+.Payment {
+    color: white;
+    margin-bottom: 12.3rem;
+}
+
+.PaymentForm {
+    margin-left: 25%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    border-radius: 25px;
+    border: 2px solid #00ffff;
+    padding: 20px;
+    width: 50%;
+    height: 400px;
+}
+
+.SelectMovieDiv {
+}
+
+.SelectMovie {
+    color: white;
+}
+
+.SelectMovieOption {
+    align-items: center;
+    width: 20rem;
+    margin: auto;
+    border: 3px solid #00ffff;
+    border-radius: 7px;
+}
+
+.SelectTicket {
+    color: white;
+    margin: auto;
+}
+
+.AdultTicket {
+    color: white;
+    margin: auto;
+}
+
+.ChildTicket {
+    color: white;
+    margin: auto;
+}
+
+.ConTicket {
+    color: white;
+    margin: auto;
+}
+
+.AdultInput {
+    width: 20rem;
+    border: 3px solid #00ffff;
+    border-radius: 4px;
+    background-color: #555;
+    color: white;
+    padding: 5px 10px;
+    margin: auto;
+}
+
+.ChildInput {
+    width: 20rem;
+    border: 3px solid #00ffff;
+    border-radius: 4px;
+    background-color: #555;
+    color: white;
+    padding: 5px 10px;
+    margin: auto;
+}
+
+.ConInput {
+    width: 20rem;
+    border: 3px solid #00ffff;
+    border-radius: 4px;
+    background-color: #555;
+    color: white;
+    padding: 5px 10px;
+    margin: auto;
+}
+
+.PurchaceButton:hover {
+    background-color: #999;
+}
+
+.PayForm {
+    border: 3px solid #00ffff;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 10rem;
+    margin-top: 2rem;
+    width: 50rem;
+    margin: auto;
+}
+
+.FormRow {
+    padding: 1rem;
+    border: 3px solid #00ffff;
+    margin: auto;
+    width: 500px;
+    border-radius: 12px;
+}
+
+.PurchaceButton {
+    margin-top: 3rem;
+    border-radius: 12px;
+    background-color: #555;
+    color: white;
+    border: 3px solid #00ffff;
+    padding: 2px 6px;
+    margin-top: 1rem;
+}
+
+.totalPay {
+    color: white;
+}

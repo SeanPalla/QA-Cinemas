@@ -1,0 +1,134 @@
+.comments {
+  
+  }
+  
+  .comments-title {
+    color: #00FFFF;
+    font-size: 50px;
+  }
+  
+  .comments-container {
+    width: 100%;
+  }
+  
+  .comment-form-title {
+    color: white;
+    font-size: 25px;
+    
+  }
+  
+  .comment-form-textarea {
+    width: 50%;
+    border: 3px solid #00FFFF;
+    border-radius: 10px;
+    margin-top: 10px;
+    height: 50px;
+    float: left;
+    margin-left: 25%;
+    
+  }
+  
+  .comment-form-button {
+   width: 10%;
+   height: 50px;
+   float: right;
+   border: 3px solid #00FFFF;
+   border-radius: 10px;
+   margin-top: 1%;
+   margin-right: 45%;
+   color: white;
+   
+  }
+  
+  .commentinputfield{
+    margin-bottom: 10%;
+  }
+  .comment-form-button:hover:enabled {
+    
+  }
+  
+  .comment-form-button:disabled {
+    
+  }
+  
+  .comment-form-cancel-button {
+    
+  }
+  
+  .comment {
+    border: 3px solid #00FFFF;
+    margin-top: 2%;
+    border-radius: 10px;
+    width: 75%;
+    background-color: #444;
+    margin-left: 12.5%;
+    margin-bottom: 1%;
+    padding-bottom: 3%;
+  }
+
+  .comment-image-container {
+    float: left;
+    margin-top: 1%;
+    margin-left: 1%;
+  }
+ 
+  .comment-right-part {
+    
+  }
+  
+  .comment-content {
+    color: black;
+    margin-bottom: 5%;
+  }
+  
+  .comment-author {
+    color: white;
+    float: left;
+    margin-top: -1%;
+    margin-left: 1%;
+  }
+
+  .comment-datecreated{
+    color: white;
+    float: right;
+    margin-right: 1%;
+  }
+  
+  .comment-text {
+    color: white;
+  }
+  
+  .comment-actions {
+    
+  }
+  
+  .comment-action {
+    
+  }
+  
+  .comment-action:hover {
+    
+  }
+  
+  .replies {
+    border: 3px solid pink;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-radius: 10px;
+    padding: 1%;
+    background-color: #555;
+    width: 80%;
+    margin-left: 10%;
+    
+  }
+
+  .replies-tag {
+    color: white;
+    text-align: left;
+  }
+
+  .replyButton {
+    color: white;
+  }

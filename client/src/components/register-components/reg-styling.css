@@ -1,0 +1,135 @@
+
+:root {
+    --green: #0df5e2;
+}
+
+.register--main-container {
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 300px;
+    width: 800px;
+    background-color: #535859;
+    border-radius: 10px;
+}
+
+
+.register-header {
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px;
+    color: var(--green);
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.register-form--wrapper {
+    display: flex;
+    /* width: 600px; */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 300px;
+    padding-bottom: 200px;
+}
+
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 600px;
+    margin: auto;
+}
+
+.reg-form--error {
+    color: #fa9e8b ;
+}
+
+.reg-form--left-side {
+    padding-right:20px;
+}
+
+.reg-form--right-side {
+    padding-left: 0px
+}
+
+.reg-form--input {
+    /* width: 220px; */
+    padding: 10px;
+    margin: 15px 0px;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: none;
+    font-family: sans-serif;
+}
+
+.reg-form--input::placeholder {
+    font-family: 'Nikkyou Sans', sans-serif; 
+}
+
+.reg-form--birth-date{
+    border-radius: 10px;
+}
+
+#birthdate-label {
+    color: #ffffff;
+}
+
+#reg-form--password-input::placeholder {
+    font-family: 'Nikkyou Sans', sans-serif;
+    letter-spacing: 0em;
+}
+
+#reg-form--password-input {
+    font-family: 'Nikkyou Sans', sans-serif;
+    letter-spacing: 0.15em;
+}
+
+#reg-form--confirm-password::placeholder {
+    font-family: 'Nikkyou Sans', sans-serif;
+    letter-spacing: 0em;
+}
+
+#reg-form--confirm-password {
+    font-family: 'Nikkyou Sans', sans-serif;
+    letter-spacing: 0.2em;
+}
+
+#reg-form--dob { 
+    font-family: 'Nikkyou Sans', sans-serif;
+}
+
+#reg-form--phonenumber-input {
+    font-family: 'Nikkyou Sans', sans-serif;
+}
+
+#reg-form--postcode {
+    font-family: 'Nikkyou Sans', sans-serif;
+}
+
+#reg-form--button {
+    background-color: var(--dark);
+    color: var(--green);
+    padding: 8px 50px;
+    border: 2px solid var(--green);
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+#reg-form--button:hover {
+    background-color: var(--green);
+    color: var(--dark);
+    border: 2px solid var(--green);
+}
+
+#reg-form--button:disabled:hover {
+    background-color: var(--dark);
+    color: var(--green);
+    cursor: wait;
+}
+
+.reg-form--terms {
+    padding: 20px;
+}
