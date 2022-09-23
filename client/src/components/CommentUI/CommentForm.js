@@ -1,10 +1,6 @@
 import { useState } from "react";
 
-const CommentForm = ({
-  handleSubmit,
-  submitLabel,
-  initialText = "",
-}) => {
+const CommentForm = ({ handleSubmit, submitLabel, initialText = "" }) => {
   const [text, setText] = useState(initialText);
   const isTextareaDisabled = text.length === 0;
 
@@ -14,7 +10,7 @@ const CommentForm = ({
     setText("");
   };
   return (
-    <form onSubmit={onSubmit}>
+    <form className="commentinputfield" onSubmit={onSubmit}>
       <textarea
         className="comment-form-textarea"
         value={text}
