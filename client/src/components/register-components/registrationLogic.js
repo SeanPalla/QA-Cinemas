@@ -7,6 +7,10 @@ import "react-toastify/dist/ReactToastify.min.css";
 
 YupPassword(yup);
 
+// const [disabled, setDisabled] = useState(false);
+
+const backendPort = 5001 //process.env.PORT || 5001;
+
 const toastifySuccess = () => {
     toast("Signed up!", {
       position: "bottom-right",
@@ -77,15 +81,9 @@ const firstValues = {
     terms: false
 }
 
-function onSubmit(values) {
-    console.log("poo");
-}
-
 function regUser(name, username, dob, email, phone, houseNameNum, addLine1, addLine2, city, postcode) {
 
-
-    // CHANGE BACK TO 5000
-    Axios.post('/api/register', {
+    Axios.post(`http://localhost/${backendPort}/api/register`, {
         name,
         dob,
         email,
@@ -99,9 +97,12 @@ function regUser(name, username, dob, email, phone, houseNameNum, addLine1, addL
           city,
           postcode,
         }
-    }).then(toastifySuccess())
+    }).then(res => {
+        if (res.status === 200) toastifySuccess();
+        else toastifyFailure(`${res.status}: ${res.statusText}`)
+      })
       .catch(err => toastifyFailure(err));
 
 }
 
-export { regUser, regFormSchema, firstValues, onSubmit};
+export { regUser, regFormSchema, firstValues};

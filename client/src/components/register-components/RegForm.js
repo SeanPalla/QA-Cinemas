@@ -3,7 +3,7 @@ import { Form, Button, OverlayTrigger, Col, Row } from 'react-bootstrap';
 import "react-toastify/dist/ReactToastify.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import renderPWTooltip from './password_tooltip'; 
-import { regUser, regFormSchema, firstValues, onSubmit } from './registrationLogic';
+import { regUser, regFormSchema, firstValues } from './registrationLogic';
 import { Formik, ErrorMessage } from 'formik';
 import Pdf from "../Screens/ScreensExtras/QA-Cinema.pdf";
 import ErrorText from './ErrorText';
@@ -16,19 +16,25 @@ export default function RegForm() {
             <Formik
                 initialValues={firstValues}
                 validationSchema={regFormSchema}
-                onSubmit={onSubmit}
-                validateOnChange={true}
-                validateOnBlur={true}
             >
                 {({
-                    handleSubmit,
                     handleChange,
+                    handleSubmit,
                     values,
                     touched,
-                    isValid,
                     errors,
                 }) => (
-                    <Form noValidate className="register-form" onSubmit={handleSubmit()}>
+                    <Form 
+                        className="register-form" 
+                        onSubmit={(e) => {
+                            handleSubmit(e);
+                            regUser(
+                                values.fullName, values.username, values.dob, values.email,
+                                values.phone, values.houseNameNum, values.addLine1, values.addLine2, 
+                                values.city, values.postcode
+                            )
+                        }}
+                    >
                         <Row className="reg-form--sub-wrapper">
                             <Form.Group as={Col} className="reg-form--left-side">
                                 <Form.Control
@@ -38,7 +44,6 @@ export default function RegForm() {
                                     value={values.fullName}
                                     onChange={handleChange}
                                     isValid={touched.fullName && !errors.fullName}
-                                    isInValid={touched.fullName && errors.fullName}
                                     className="reg-form--input"
                                 />
                                 <ErrorMessage component={ErrorText} name="fullName"/>
@@ -49,7 +54,6 @@ export default function RegForm() {
                                     value={values.username}
                                     onChange={handleChange}
                                     isValid={touched.username && !errors.username}
-                                    isInvalid={touched.username && errors.username}
                                     className="reg-form--input"
                                 />
                                 <ErrorMessage component={ErrorText} name="username"/>
@@ -60,7 +64,6 @@ export default function RegForm() {
                                     value={values.email}
                                     onChange={handleChange}
                                     isValid={touched.email && !errors.email}
-                                    isInvalid={touched.email && errors.email}
                                     className="reg-form--input"
                                 />
                                 <ErrorMessage name="email" component={ErrorText}/>
@@ -76,7 +79,6 @@ export default function RegForm() {
                                     value={values.password}
                                     onChange={handleChange}
                                     isValid={touched.password && !errors.password}
-                                    isInvalid={touched.password && errors.password}
                                     className="reg-form--input"
                                     id="reg-form--password-input"
                                     />
@@ -90,7 +92,6 @@ export default function RegForm() {
                                     value={values.dob}
                                     onChange={handleChange}
                                     isValid={touched.dob && !errors.dob}
-                                    isInvalid={touched.dob && errors.dob}
                                     className="reg-form--input"
                                     id="reg-form--dob"
                                 />
@@ -104,7 +105,6 @@ export default function RegForm() {
                                     value={values.houseNameNum}
                                     onChange={handleChange}
                                     isValid={touched.houseNameNum && !errors.houseNameNum}
-                                    isInvalid={touched.houseNameNum && errors.houseNameNum}
                                     className="reg-form--input"
                                 />
                                 <ErrorMessage name="houseNameNum" component={ErrorText}/>
@@ -115,7 +115,6 @@ export default function RegForm() {
                                     value={values.addLine1}
                                     onChange={handleChange}
                                     isValid={touched.addLine1 && !errors.addLine1}
-                                    isInvalid={touched.addLine1 && errors.addLine1}
                                     className="reg-form--input"
                                 />
                                 <ErrorMessage name="addLine1" component={ErrorText}/>
@@ -125,7 +124,6 @@ export default function RegForm() {
                                     name="addLine2"
                                     value={values.addLine2}
                                     onChange={handleChange}
-                                    isInvalid={touched.addLine2 && errors.addLine2}
                                     className="reg-form--input"
                                 />
                                 <ErrorMessage name="addLine2" component={ErrorText}/>
@@ -136,7 +134,6 @@ export default function RegForm() {
                                     value={values.city}
                                     onChange={handleChange}
                                     isValid={touched.city && !errors.city}
-                                    isInvalid={touched.city && errors.city}
                                     className="reg-form--input"
                                 />
                                 <ErrorMessage name="city" component={ErrorText}/>
@@ -147,7 +144,6 @@ export default function RegForm() {
                                     value={values.postcode}
                                     onChange={handleChange}
                                     isValid={touched.postcode && !errors.postcode}
-                                    isInValid={touched.postcode && errors.postcode}
                                     className="reg-form--input"
                                     id="reg-form--postcode"
                                 />
@@ -159,7 +155,6 @@ export default function RegForm() {
                                     value={values.phone}
                                     onChange={handleChange}
                                     isValid={touched.phone && !errors.phone}
-                                    isInvalid={touched.phone && errors.phone}
                                     className="reg-form--input"
                                     id="reg-form--phonenumber-input"
                                 />
@@ -171,7 +166,7 @@ export default function RegForm() {
                                 required
                                 name="terms"
                                 onChange={handleChange}
-                                isInValid={!values.terms && touched.terms}
+                                isValid={values.terms && touched.terms}
                                 label="Accept the Terms and Conditions"
                             >
                             </Form.Check>
@@ -181,13 +176,10 @@ export default function RegForm() {
                         <Button 
                             id="reg-form--button" 
                             type="submit" 
-                            onClick={
-                                regUser(
-                                    values.fullName, values.username, values.dob, values.email,
-                                    values.phone, values.houseNameNum, values.addLine1, values.addLine2, 
-                                    values.city, values.postcode
-                                )}
-                            disabled={!isValid && !touched}
+                            onClick={() => {
+                                console.log("clicked")
+                            }}
+                            disabled={!!errors && !touched}
                         > 
                             Register
                         </Button>
