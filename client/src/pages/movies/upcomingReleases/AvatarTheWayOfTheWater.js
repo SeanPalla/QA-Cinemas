@@ -1,25 +1,25 @@
 import "../movieStyle.css";
 export default function AvatarTheWayOfTheWater() {
     return (
-        <div>
+        <div className="movieObject">
             <h1 className="movieTitle">Avatar The Way Of The Water</h1>
             <h2 className="dateRatingLength">2022</h2>
             <h3 className="genre"> Action - Adventure - Fantasy</h3>
-            <img
-                className="movieImage"
-                src="static/images/Avatar.png"
-                alt="Avatar Poster"
-            />
-            <iframe
-                className="movieTrailer"
-                width="560"
-                height="500"
-                src="https://www.youtube.com/embed/NZrX_ES93JA"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-            ></iframe>
+            <div className="imageandmovie">
+                <img
+                    className="movieImage"
+                    src="static/images/Avatar.png"
+                    alt="Avatar Poster"
+                />
+                <iframe
+                    className="movieTrailer"
+                    src="https://www.youtube.com/embed/NZrX_ES93JA"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
             <p className="Director"> Director: James Cameron</p>
             <p className="Actors">
                 Actors: Zoe Saldana, Michelle Yeoh, Kate Winslet, Sam
