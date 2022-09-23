@@ -65,11 +65,11 @@ Running Test are located in the src/client/test folder
 
 ## Authors
 
-* **Sean Palla**  - Githut ->([https://github.com/SeanPalla]
-* **Nikesh Bhudia** - *Add work* - 
+* **Sean Palla**  - GitHub ->([https://github.com/SeanPalla]
+* **Nikesh Bhudia** - GitHub ->([https://github.com/NikeshBhudia] 
 * **Stanislav Angelov** - GitHub ->([https://github.com/sisath]
-* **Christian Jardine** - Githut ->([https://github.com/ChrisSJard](https://github.com/ChrisSJard)) 
-* **Dejan Mac** - *Add work* -  
+* **Christian Jardine** - GitHub ->([https://github.com/ChrisSJard](https://github.com/ChrisSJard)) 
+* **Dejan Mac** - GitHub ->([https://github.com/dejanmccreery] 
 ## License
 
 This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md) file for details 
