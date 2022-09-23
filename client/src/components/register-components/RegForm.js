@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-// import DatePicker from 'react-date-picker';
-// import DoB_Picker from './dob_logic';
+import React from 'react';
 import { Form, Button, OverlayTrigger, Col, Row } from 'react-bootstrap';
 import "react-toastify/dist/ReactToastify.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,6 +7,7 @@ import { regUser, regFormSchema, firstValues, onSubmit } from './registrationLog
 import { Formik, ErrorMessage } from 'formik';
 import Pdf from "../Screens/ScreensExtras/QA-Cinema.pdf";
 import ErrorText from './ErrorText';
+import { ToastContainer } from "react-toastify";
 
 export default function RegForm() {
 
@@ -29,7 +28,7 @@ export default function RegForm() {
                     isValid,
                     errors,
                 }) => (
-                    <Form noValidate className="register-form" onSubmit={handleSubmit}>
+                    <Form noValidate className="register-form" onSubmit={handleSubmit()}>
                         <Row className="reg-form--sub-wrapper">
                             <Form.Group as={Col} className="reg-form--left-side">
                                 <Form.Control
@@ -98,6 +97,17 @@ export default function RegForm() {
                                 <ErrorMessage name="dob" component={ErrorText}/>
                             </Form.Group>
                             <Form.Group as={Col} className="reg-form--right-side">
+                                <Form.Control
+                                    type="text"
+                                    placeholder="House name or number"
+                                    name="houseNameNum"
+                                    value={values.houseNameNum}
+                                    onChange={handleChange}
+                                    isValid={touched.houseNameNum && !errors.houseNameNum}
+                                    isInvalid={touched.houseNameNum && errors.houseNameNum}
+                                    className="reg-form--input"
+                                />
+                                <ErrorMessage name="houseNameNum" component={ErrorText}/>
                                 <Form.Control
                                     type="text"
                                     placeholder="Address Line 1"
@@ -171,8 +181,13 @@ export default function RegForm() {
                         <Button 
                             id="reg-form--button" 
                             type="submit" 
-                            onClick={console.log(values + " submitted")}
-                            disabled={!isValid}
+                            onClick={
+                                regUser(
+                                    values.fullName, values.username, values.dob, values.email,
+                                    values.phone, values.houseNameNum, values.addLine1, values.addLine2, 
+                                    values.city, values.postcode
+                                )}
+                            disabled={!isValid && !touched}
                         > 
                             Register
                         </Button>
@@ -185,6 +200,7 @@ export default function RegForm() {
                 <br/>
                 <a className="register--login-link" href="/Login">Log in</a>
             </p>
+            <ToastContainer />
         </div>
     );
 }

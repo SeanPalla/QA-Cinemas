@@ -2,8 +2,37 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 import * as yup from 'yup';
 import YupPassword from 'yup-password';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 YupPassword(yup);
+
+const toastifySuccess = () => {
+    toast("Signed up!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      className: "submit-feedback success",
+      toastId: "notifyToast",
+    });
+};
+
+const toastifyFailure = (error) => {
+  toast(error, {
+    position: "bottom-right",
+    autoClose: 5000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: false,
+    className: "submit-feedback success",
+    toastId: "notifyToast",
+  });
+};
+
 
 const passConditions =  yup.string().required()
                                     .min(10,
@@ -24,6 +53,7 @@ const regFormSchema = yup.object().shape({
     email: yup.string().email('Email should be formatted x@y.z').required('Email is required'),
     password: passConditions,
     dob: yup.string().required('Date of Birth is required').matches(/^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$/, 'Incorrect date format'),
+    houseNameNum: yup.string().required('House name/number is required'),
     addLine1: yup.string().required('First Address Line is required'),
     addLine2: yup.string(),
     city: yup.string().required('City is required'),
@@ -38,6 +68,7 @@ const firstValues = {
     email: "",
     password: "",
     dob: "",
+    houseNameNum: "",
     addLine1: "",
     addLine2: "",
     city: "",
@@ -50,22 +81,26 @@ function onSubmit(values) {
     console.log("poo");
 }
 
-function regUser(name, username, dob, email, phone, addLine1, addLine2, city, postcode) {
+function regUser(name, username, dob, email, phone, houseNameNum, addLine1, addLine2, city, postcode) {
 
 
     // CHANGE BACK TO 5000
-    Axios.post('http://localhost:3000/register', {
+    Axios.post('/api/register', {
         name,
-        username,
         dob,
         email,
+        username,
         phone,
-        addLine1,
-        addLine2,
-        city,
-        postcode
-    }).then()
-      .catch(err => console.error(err));
+        role: "MEMBER",
+        address: {
+          houseNameNum,
+          addLine1,
+          addLine2,
+          city,
+          postcode,
+        }
+    }).then(toastifySuccess())
+      .catch(err => toastifyFailure(err));
 
 }
 
