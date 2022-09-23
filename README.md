@@ -65,10 +65,10 @@ Running Test are located in the src/client/test folder
 
 ## Authors
 
-* **Sean Palla** - *Add work* - - Githut ->([https://github.com/SeanPalla]
+* **Sean Palla**  - Githut ->([https://github.com/SeanPalla]
 * **Nikesh Bhudia** - *Add work* - 
 * **Stanislav Angelov** - *Add work* - 
-* **Christian Jardine** - *Work Perfomred: (Build the Comment backend handler{Controller, Model Schema, Routes}, Passport and Schema handling and login Authenication, Build the Comment Component, Watchlist Component and Login User to allow user data to be used during the session)* - Githut ->([https://github.com/ChrisSJard](https://github.com/ChrisSJard)) 
+* **Christian Jardine** - Githut ->([https://github.com/ChrisSJard](https://github.com/ChrisSJard)) 
 * **Dejan Mac** - *Add work* -  
 ## License
 
