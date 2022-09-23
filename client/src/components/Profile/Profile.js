@@ -7,7 +7,7 @@ const Profile = () => {
 
   useEffect(() => {
     axios.get(`http://localhost:5000/api/users/`).then((res) => {
-      const getUser = window.sessionStorage.getItem("id") || "Sis0";
+      const getUser = window.sessionStorage.getItem("name");
       const filterUser = res.data.filter((user) => user.username === getUser);
 
       setActiveUser(filterUser);
@@ -23,67 +23,67 @@ const Profile = () => {
 
             <div className="group-profile">
               <label className="label-profile">Full Name</label>
-              <input value={user.fullName} />
+              <input className="input-profile" value={user.fullName} />
             </div>
 
             <div className="group-profile">
               <label className="label-profile">Date Of Birth</label>
               <input
+                className="input-profile"
                 value={new Date(user.dateOfBirth).toLocaleDateString()}
               ></input>
             </div>
 
             <div className="group-profile">
               <label className="label-profile">Email Address</label>
-              <input value={user.email} />
+              <input className="input-profile" value={user.email} />
             </div>
 
             <div className="group-profile">
               <label className="label-profile">Username</label>
-              <input value={user.username} />
+              <input className="input-profile" value={user.username} />
             </div>
 
             <div className="group-profile">
               <label className="label-profile">Phone Number</label>
-              <input value={user.phoneNumber} />
+              <input className="input-profile" value={user.phoneNumber} />
             </div>
 
             <div className="group-profile">
               <label className="label-profile">Role</label>
-              <input value={user.role} />
+              <input className="input-profile" value={user.role} />
             </div>
 
             <div className="group-profile">
               <label className="label-profile">Building Name Or Number</label>
-              <input value={user.address.buildingNameOrNumber} />
+              <input className="input-profile" value={user.address.buildingNameOrNumber} />
             </div>
 
             <div className="group-profile">
               <label className="label-profile">Street Name</label>
-              <input value={user.address.streetName} />
+              <input className="input-profile" value={user.address.streetName} />
             </div>
 
             <div className="group-profile">
               <label className="label-profile">Address Line 2</label>
-              <input value={user.address.addressLine2} />
+              <input className="input-profile" value={user.address.addressLine2} />
             </div>
 
             <div className="group-profile">
               <label className="label-profile">Post Code</label>
-              <input value={user.address.postcode} />
+              <input className="input-profile" value={user.address.postcode} />
             </div>
 
             <div className="group-profile">
               <label className="label-profile">City</label>
-              <input value={user.address.city} />
+              <input className="input-profile" value={user.address.city} />
             </div>
 
             <div className="group-profile">
               <label className="label-profile">Bookings</label>
-              <input value={user.bookings} />
+              <input className="input-profile" value={user.bookings} />
             </div>
 
-            {/* <button>Update</button> */}
           </form>
         </div>
       ))}
