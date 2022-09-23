@@ -1,142 +1,203 @@
-import React, { useEffect, useState } from 'react';
-// import DatePicker from 'react-date-picker';
-// import DoB_Picker from './dob_logic';
+import React from 'react';
 import { Form, Button, OverlayTrigger, Col, Row } from 'react-bootstrap';
 import "react-toastify/dist/ReactToastify.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import renderPWTooltip from './password_tooltip'; 
-import regUser from './registrationLogic';
-import * as yup from 'yup';
-import { Formik } from 'formik';
+import { regUser, regFormSchema, firstValues } from './registrationLogic';
+import { Formik, ErrorMessage } from 'formik';
+import Pdf from "../Screens/ScreensExtras/QA-Cinema.pdf";
+import ErrorText from './ErrorText';
+import { ToastContainer } from "react-toastify";
 
 export default function RegForm() {
 
-    const [fullName, setFullName] = useState("");
-    const [username, setUsername] = useState("");
-    const [dob, setDOB] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [addLine1, setAddLine1] = useState("");
-    const [addLine2, setAddLine2] = useState("");
-    const [city, setCity] = useState("");
-    const [postcode, setPostcode] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
-
-    const schema = yup.object().shape({
-        fullName: yup.string().required(),
-        username: yup.string().required(),
-        city: yup.string().required(),
-        state: yup.string().required(),
-        zip: yup.string().required(),
-        terms: yup.bool().required().oneOf([true], 'Terms must be accepted'),
-    });
-
     return (
         <div className="register-form--wrapper">
-            <Form className="register-form">
-                <Row className="reg-form--sub-wrapper">
-                    <Form.Group as={Col} className="reg-form--left-side">
-                        <Form.Control
-                            type="text"
-                            placeholder="Full Name"
-                            value={fullName}
-                            onChange={(event) => setFullName(event.target.value)}
-                            className="reg-form--input"
-                        />
-                        <Form.Control
-                            type="text"
-                            placeholder="Username"
-                            value={username}
-                            onChange={(event) => setUsername(event.target.value)}
-                            className="reg-form--input"
-                        />
-                        {/* <label for="reg-form--birth-date" id="birthdate-label">Date of Birth</label> */}
-                        <Form.Control
-                            type="text"
-                            placeholder="Email address"
-                            value={email}
-                            onChange={(event) => setEmail(event.target.value)}
-                            className="reg-form--input"
-                        />
-                        <OverlayTrigger
-                            placement="right"
-                            delay={{ show: 250, hide: 400 }}
-                            overlay={renderPWTooltip}
+            <Formik
+                initialValues={firstValues}
+                validationSchema={regFormSchema}
+            >
+                {({
+                    handleChange,
+                    handleSubmit,
+                    values,
+                    touched,
+                    errors,
+                }) => (
+                    <Form 
+                        className="register-form" 
+                        onSubmit={(e) => {
+                            handleSubmit(e);
+                            regUser(
+                                values.fullName, values.username, values.dob, values.email,
+                                values.phone, values.houseNameNum, values.addLine1, values.addLine2, 
+                                values.city, values.postcode
+                            )
+                        }}
+                    >
+                        <Row className="reg-form--sub-wrapper">
+                            <Form.Group as={Col} className="reg-form--left-side">
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Full Name"
+                                    name="fullName"
+                                    value={values.fullName}
+                                    onChange={handleChange}
+                                    isValid={touched.fullName && !errors.fullName}
+                                    className="reg-form--input"
+                                />
+                                <ErrorMessage component={ErrorText} name="fullName"/>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Username"
+                                    name="username"
+                                    value={values.username}
+                                    onChange={handleChange}
+                                    isValid={touched.username && !errors.username}
+                                    className="reg-form--input"
+                                />
+                                <ErrorMessage component={ErrorText} name="username"/>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Email address"
+                                    name="email"
+                                    value={values.email}
+                                    onChange={handleChange}
+                                    isValid={touched.email && !errors.email}
+                                    className="reg-form--input"
+                                />
+                                <ErrorMessage name="email" component={ErrorText}/>
+                                <OverlayTrigger
+                                    placement="right"
+                                    delay={{ show: 250, hide: 400 }}
+                                    overlay={renderPWTooltip}
+                                    >
+                                    <Form.Control 
+                                    type="password"
+                                    placeholder="Password"
+                                    name="password"
+                                    value={values.password}
+                                    onChange={handleChange}
+                                    isValid={touched.password && !errors.password}
+                                    className="reg-form--input"
+                                    id="reg-form--password-input"
+                                    />
+                                </OverlayTrigger>
+                                <ErrorMessage name="password" component={ErrorText}/>
+                                {/* <i class="bi bi-eye-slash" id="togglePassword"></i> */}
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Date of Birth (DD-MM-YYYY)"
+                                    name="dob"
+                                    value={values.dob}
+                                    onChange={handleChange}
+                                    isValid={touched.dob && !errors.dob}
+                                    className="reg-form--input"
+                                    id="reg-form--dob"
+                                />
+                                <ErrorMessage name="dob" component={ErrorText}/>
+                            </Form.Group>
+                            <Form.Group as={Col} className="reg-form--right-side">
+                                <Form.Control
+                                    type="text"
+                                    placeholder="House name or number"
+                                    name="houseNameNum"
+                                    value={values.houseNameNum}
+                                    onChange={handleChange}
+                                    isValid={touched.houseNameNum && !errors.houseNameNum}
+                                    className="reg-form--input"
+                                />
+                                <ErrorMessage name="houseNameNum" component={ErrorText}/>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Address Line 1"
+                                    name="addLine1"
+                                    value={values.addLine1}
+                                    onChange={handleChange}
+                                    isValid={touched.addLine1 && !errors.addLine1}
+                                    className="reg-form--input"
+                                />
+                                <ErrorMessage name="addLine1" component={ErrorText}/>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Address Line 2"
+                                    name="addLine2"
+                                    value={values.addLine2}
+                                    onChange={handleChange}
+                                    className="reg-form--input"
+                                />
+                                <ErrorMessage name="addLine2" component={ErrorText}/>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="City"
+                                    name="city"
+                                    value={values.city}
+                                    onChange={handleChange}
+                                    isValid={touched.city && !errors.city}
+                                    className="reg-form--input"
+                                />
+                                <ErrorMessage name="city" component={ErrorText}/>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Postcode"
+                                    name="postcode"
+                                    value={values.postcode}
+                                    onChange={handleChange}
+                                    isValid={touched.postcode && !errors.postcode}
+                                    className="reg-form--input"
+                                    id="reg-form--postcode"
+                                />
+                                <ErrorMessage name="postcode" component={ErrorText}/>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Phone Number"
+                                    name="phone"
+                                    value={values.phone}
+                                    onChange={handleChange}
+                                    isValid={touched.phone && !errors.phone}
+                                    className="reg-form--input"
+                                    id="reg-form--phonenumber-input"
+                                />
+                                <ErrorMessage name="phone" component={ErrorText}/>
+                            </Form.Group>
+                        </Row>
+                        <Row>
+                            <Form.Check
+                                required
+                                name="terms"
+                                onChange={handleChange}
+                                isValid={values.terms && touched.terms}
+                                label="Accept the Terms and Conditions"
                             >
-                            <Form.Control 
-                            type="password"
-                            placeholder="Password"
-                            value={password}
-                            onChange={(event) => setPassword(event.target.value)}
-                            className="reg-form--input"
-                            id="reg-form--password-input"
-                            />
-                        </OverlayTrigger>
-                        {/* <i class="bi bi-eye-slash" id="togglePassword"></i> */}
-                        <Form.Control
-                            type="text"
-                            placeholder="Date of Birth (DD-MM-YYYY)"
-                            value={dob}
-                            onChange={(event) => setDOB(event.target.value)}
-                            className="reg-form--input"
-                        />
-                    </Form.Group>
-                    <Form.Group as={Col} className="reg-form--right-side">
-                        <Form.Control
-                            type="text"
-                            placeholder="Address Line 1"
-                            value={addLine1}
-                            onChange={(event) => setAddLine1(event.target.value)}
-                            className="reg-form--input"
-                        />
-                        <Form.Control
-                            type="text"
-                            placeholder="Address Line 2"
-                            value={addLine2}
-                            onChange={(event) => setAddLine2(event.target.value)}
-                            className="reg-form--input"
-                        />
-                        <Form.Control
-                            type="text"
-                            placeholder="City"
-                            value={city}
-                            onChange={(event) => setCity(event.target.value)}
-                            className="reg-form--input"
-                        />
-                        <Form.Control
-                            type="text"
-                            placeholder="Postcode"
-                            value={postcode}
-                            onChange={(event) => setPostcode(event.target.value)}
-                            className="reg-form--input"
-                        />
-                        <Form.Control
-                            type="text"
-                            placeholder="Phone Number"
-                            value={phoneNumber}
-                            onChange={(event) => setPhoneNumber(event.target.value)}
-                            className="reg-form--input"
-                            id="reg-form--phonenumber-input"
-                        />
-                    </Form.Group>
-                </Row>
-                <Button id="reg-form--button" onClick={regUser}>
-                    Register
-                </Button>
-            </Form>
+                            </Form.Check>
+                            <ErrorMessage name="terms" component={ErrorText}/>
+                            <a href={Pdf} without rel="noopener noreferrer" target="_blank">Read Here</a>
+                        </Row>
+                        <Button 
+                            id="reg-form--button" 
+                            type="submit" 
+                            onClick={() => {
+                                console.log("clicked")
+                            }}
+                            disabled={!!errors && !touched}
+                        > 
+                            Register
+                        </Button>
+                    </Form>
+                )}
+            </Formik>
 
             <p className="register--already-account">
                 Already have an account?
                 <br/>
                 <a className="register--login-link" href="/Login">Log in</a>
             </p>
-
-            <div className="reg-form--terms">
-                <p>Terms & Conditions</p>
-            </div>
+            <ToastContainer />
         </div>
     );
 }
+
+//regUser call on line 173
 
 // <div role="button" aria-label="close pop-up" class="popup-close-button" tabindex="0"><div>
 // exit button
