@@ -68,7 +68,7 @@ Running Test are located in the src/client/test folder
 * **Sean Palla** - *Add work* - [christophperrins](https://github.com/addyourGit)
 * **Nikesh Bhudia** - *Add work* - [christophperrins](https://github.com/addyourGit)
 * **Stanislav Angelov** - *Add work* - [christophperrins](https://github.com/addyourGit) 
-* **Christian Jardine** - *Work Perfomred: (Build the Comment backend handler{Controller, Model Schema, Routes}, Passport and Schema handling and login Authenication, Build the Comment Component, Watchlist Component and Login User to allow user data to be used during the session)* - Githut ->([https://github.com/addyourGit](https://github.com/ChrisSJard)) 
+* **Christian Jardine** - *Work Perfomred: (Build the Comment backend handler{Controller, Model Schema, Routes}, Passport and Schema handling and login Authenication, Build the Comment Component, Watchlist Component and Login User to allow user data to be used during the session)* - Githut ->([https://github.com/ChrisSJard](https://github.com/ChrisSJard)) 
 * **Dejan Mac** - *Add work* - [christophperrins](https://github.com/addyourGit) 
 ## License
 
