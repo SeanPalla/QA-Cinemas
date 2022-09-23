@@ -28,6 +28,11 @@ Please use link to view Jira software Sprint
 Using your preferred Version control software , clone this repository using git clone (Https or SSH). It is advised to use SSH as HTTPS is no longer accepted on later versios.
 This will clone QA-Cinemas into your local directory. Move into the QA-Cinemas folder.
 
+## User Login Information
+To log in to the Qa-Cinema please use the following username and password:
+username: qaUser
+password: "Newb32434ot233132%"
+
 # Starting Server/Backend (Express.js )
 1. Move into src/server.
 2. npm i. (N.B. Please note you need to have Node.js installed on your pc to perform this action).
