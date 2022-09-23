@@ -1,23 +1,22 @@
 import CommentForm from "./CommentForm";
 
 const Comment = ({
-  comment, 
-  replies, 
-  setActiveComment, 
-  activeComment, 
-  updateComment, 
-  deleteComment, 
-  addComment, 
-  parentId = null, 
-  currentUserId
+  comment,
+  replies,
+  setActiveComment,
+  activeComment,
+  updateComment,
+  deleteComment,
+  addComment,
+  parentId = null,
+  currentUserId,
 }) => {
-  
   // Added in truthy or falsey to allow editing to be allowed
   const isEditing =
     activeComment &&
     activeComment.id === comment._id &&
     activeComment.type === "editing";
-     // Added in truthy or falsey to allow replying to be allowed
+  // Added in truthy or falsey to allow replying to be allowed
   const isReplying =
     activeComment &&
     activeComment.id === comment._id &&
@@ -26,8 +25,7 @@ const Comment = ({
   // const fiveMinutes = 300000;
   // const timePassed = new Date() - new Date(comment.dateCreated) > fiveMinutes;
   // Added a truthy or falsey to allow deleting to be allowed
-  const canDelete =
-    currentUserId === comment.userId && replies.length === 0;
+  const canDelete = currentUserId === comment.userId && replies.length === 0;
   // Can User perform certain actions
   const canReply = Boolean(currentUserId);
   const canEdit = currentUserId === comment.userId;
@@ -35,11 +33,10 @@ const Comment = ({
   // Converted Date from mongooseDB to a localString for readability
   const dateCreated = new Date(comment.dateCreated).toLocaleDateString();
 
-
   return (
     <div key={comment._id} className="comment">
       <div className="comment-image-container">
-        <img src={"static/images/user-image.png"} alt="user-icon"/>
+        <img src={"static/images/user-image.png"} alt="user-icon" />
       </div>
       <div className="comment-right-part">
         <div className="comment-content">
@@ -60,8 +57,7 @@ const Comment = ({
               className="comment-action"
               onClick={() =>
                 setActiveComment({ id: comment._id, type: "replying" })
-              }
-            >
+              }>
               Reply
             </div>
           )}
@@ -70,28 +66,28 @@ const Comment = ({
               className="comment-action"
               onClick={() =>
                 setActiveComment({ id: comment._id, type: "editing" })
-              }
-            >
+              }>
               Edit
             </div>
           )}
           {canDelete && (
             <div
               className="comment-action"
-              onClick={() => deleteComment(comment._id)}
-            >
+              onClick={() => deleteComment(comment._id)}>
               Delete
             </div>
           )}
         </div>
         {isReplying && (
           <CommentForm
+            className="replyButton"
             submitLabel="Reply"
             handleSubmit={(text) => addComment(text, replyId)}
           />
         )}
         {replies.length > 0 && (
           <div className="replies">
+            <h4 className="replies-tag">Replies:</h4>
             {replies.map((reply) => (
               <Comment
                 comment={reply}
