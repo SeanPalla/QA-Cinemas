@@ -1,17 +1,20 @@
 #csvData {
-  text-align: center;
-  height: 200px;
-  float: left;
-  width: 50%;
-  }
-  
-.h1-opening-hours{
-  color: #0df5e2;
-  text-align: center;
-  }
-  
-.h6-opening-hours{
-  text-align: center;
-  color: white;
-  display: block;
-  }
+    text-align: center;
+    height: 200px;
+    float: left;
+    width: 50%;
+}
+
+.h1-opening-hours {
+    color: #0df5e2;
+    text-align: center;
+}
+
+.h6-opening-hours {
+    text-align: center;
+    color: white;
+    display: block;
+}
+.openingDiv {
+    margin-bottom: 26.5rem;
+}

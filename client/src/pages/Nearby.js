@@ -24,7 +24,7 @@ export default function Nearby() {
         nearbyInfo="Address: Square, 3-5 Irving Street Leicester
         Hours: Mon-Sat 10am-9pm"
       />
-      <h2 className="nearbySubHeading">Drinks</h2>
+      <h2 className="nearby-subHeading">Drinks</h2>
       <Todo
         nearbyName="Prosecco House"
         nearbyImage="static/image/prosecco-house.png"
@@ -46,7 +46,7 @@ export default function Nearby() {
         nearbyInfo="Address: 28-30 Houndsditch
         Hours: Mon-Sat 10am-12pm"
       />
-      <h2 className="nearbySubHeading">Attractions</h2>
+      <h2 className="nearby-subHeading">Attractions</h2>
       <Todo
         nearbyName="Tower Of London"
         nearbyImage="static\image\tower-of-london.avif"

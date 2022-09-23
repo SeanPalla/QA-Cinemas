@@ -3,7 +3,7 @@ import Comments from "../components/CommentUI/Comments";
 export default function DiscussionBoard() {
     return (
         <div>
-            <Comments />
+            <Comments currentUserId ={window.sessionStorage.getItem('id')} />
         </div>
     );
 }

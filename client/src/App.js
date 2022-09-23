@@ -2,13 +2,14 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Classifications from "./pages/Classifications";
-import Bookings from "./pages/Bookings";
+import Payment from "./pages/Pay";
 import OpeningTimes from "./pages/OpeningTimes";
 import Location from "./pages/Location";
 import Nearby from "./pages/Nearby";
 import DiscussionBoard from "./pages/DiscussionBoard";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Admin from "./pages/Admin";
@@ -39,8 +40,9 @@ function App() {
                     <Route path="/Profile" element={<Profile />} />
                     <Route path="/Admin" element={<Admin />} />
                     <Route path="/Login" element={<Login />} />
+                    <Route path="/Logout" element={<Logout />} />
                     <Route path="/Register" element={<Register />} />
-                    <Route path="/Bookings" element={<Bookings />} />
+                    <Route path="/Pay" element={<Payment />} />
                     <Route
                         path="/Classifications"
                         element={<Classifications />}

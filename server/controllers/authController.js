@@ -1,6 +1,8 @@
+require('../models/db');
 const express = require('express');
 const router = express.Router();
 const AuthUtils = require('../util/authUtils');
+const User = require('../models/user');
 
 function isJsonData(req, res, next) {
     if (req.headers['content-type'] !== 'application/json') {
@@ -9,10 +11,15 @@ function isJsonData(req, res, next) {
     next();
 };
 
-exports.loginRequest = (req, res) => {
-    console.log("Login request reached")
+exports.loginRequest = async (req, res) => {
+    const validUser = req.body.username;
     try{
-        res.status(200).send(` Testing ${req.user.username}`);
+        const user = await User.findOne({'username': validUser});
+        if (user){
+            res.status(200).json(user);
+        }else{
+            return null;
+        }
     }catch (err){
         console.error(err);
         response.status(400).send('Something went wrong registering the user');

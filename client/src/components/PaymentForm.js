@@ -1,13 +1,14 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
 import React, { useState } from "react";
+import ".//cardStyle.css";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
   style: {
     base: {
-      iconColor: "#c4f0ff",
-      color: "#fff",
+      iconColor: "#555",
+      color: "#ffffff",
       fontWeight: 500,
       fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
       fontSize: "16px",
@@ -43,6 +44,7 @@ export default function PaymentForm(props) {
         const cAmount = cticket * 5;
         const kAmount = kticket * 7;
         const totalAmount = (aAmount + cAmount + kAmount) * 100;
+        console.log(totalAmount);
         const { id } = paymentMethod;
         const response = await axios.post("http://localhost:5000/payment", {
           amount: totalAmount,
@@ -64,17 +66,17 @@ export default function PaymentForm(props) {
   return (
     <>
       {!success ? (
-        <form onSubmit={handleSubmit}>
+        <form className="PayForm" onSubmit={handleSubmit}>
           <fieldset className="FormGroup">
             <div className="FormRow">
               <CardElement options={CARD_OPTIONS} />
             </div>
           </fieldset>
-          <button>Pay</button>
+          <button className="PayButton">Pay</button>
         </form>
       ) : (
         <div>
-          <h2>shbfhjesbfjsh</h2>
+          <h2>Payment Has been successful</h2>
         </div>
       )}
     </>
